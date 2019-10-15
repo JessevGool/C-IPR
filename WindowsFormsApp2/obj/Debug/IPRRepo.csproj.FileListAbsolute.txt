@@ -7,3 +7,5 @@ C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe
 C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.pdb
 C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.exe
 C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\bin\Debug\BLELibrary.dll
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CopyComplete
