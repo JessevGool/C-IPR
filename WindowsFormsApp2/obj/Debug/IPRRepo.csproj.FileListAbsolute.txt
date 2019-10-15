@@ -1,0 +1,9 @@
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csprojAssemblyReference.cache
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.Form1.resources
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.Properties.Resources.resources
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.GenerateResource.cache
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe.config
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.exe
+C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.pdb
