@@ -1,0 +1,6 @@
+E:\School\P2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.csprojAssemblyReference.cache
+E:\School\P2\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe.config
+E:\School\P2\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe
+E:\School\P2\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.pdb
+E:\School\P2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.exe
+E:\School\P2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.pdb
