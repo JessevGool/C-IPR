@@ -10,43 +10,80 @@ namespace ServerApplication
 {
     class Program
     {
-        const int PORT_NO = 5000;
-        const string SERVER_IP = "127.0.0.1";
-
-        public static void Main(string[] args)
+        private static byte[] _buffer = new byte[1024];
+        private static List<Socket> _clientSockets = new List<Socket>();
+        private static List<Socket> _doctorSockets = new List<Socket>();
+        private static Socket _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        static void Main(string[] args)
         {
-            try
+            Console.Title = "Server";
+            SetupServer();
+            Console.ReadLine();
+        }
+        private static void SetupServer()
+        {
+            Console.WriteLine("Setting up server...");
+            _serverSocket.Bind(new IPEndPoint(IPAddress.Any, 100));
+            _serverSocket.Listen(5); //Queue max = 5
+            _serverSocket.BeginAccept(new AsyncCallback(AcceptCallback), null);
+
+        }
+
+        private static void AcceptCallback(IAsyncResult ar)
+        {
+            Socket socket = _serverSocket.EndAccept(ar);
+            _clientSockets.Add(socket);
+            Console.WriteLine("Client Connected!!");
+            socket.BeginReceive(_buffer, 0, _buffer.Length, SocketFlags.None, new AsyncCallback(ReceiveCallback), socket);
+            _serverSocket.BeginAccept(new AsyncCallback(AcceptCallback), null);
+        }
+
+        private static void ReceiveCallback(IAsyncResult ar)
+        {
+            Socket socket = (Socket)ar.AsyncState;
+            int received = socket.EndReceive(ar);
+            byte[] dataBuffer = new byte[received];
+            Array.Copy(_buffer, dataBuffer, received);
+            string text = Encoding.ASCII.GetString(dataBuffer);
+            string[] idandtext = text.Split(new[] { "##" },StringSplitOptions.None);
+            string Id = idandtext[0];
+            string message = idandtext[1];
+            Console.WriteLine($"Received text: {message} from: {Id}");
+
+            string response = string.Empty;
+            if (Id.ToLower() == "doctor")
             {
-                while (true)
+                if(message.ToLower() == "connected")
                 {
-                    TcpListener myList = new TcpListener(IPAddress.Any, 8001);
-                    myList.Start();
-                    Console.WriteLine("The server is running at port 8001...");
-                    Console.WriteLine("The local End point is  :" +
-                    myList.LocalEndpoint);
-                    Console.WriteLine("Waiting for a connection.....");
-                    TcpClient s = myList.AcceptTcpClient();
-                    Console.WriteLine("Connection accepted from " + s.Client.RemoteEndPoint);
-                    byte[] b = new byte[100];
-                    int k = s.Receive(b);
-                    Console.WriteLine("Recieved...");
-                    string Command = string.Empty;
-                    for (int i = 0; i < k; i++)
-                    {
-                        Command = Command + Convert.ToChar(b[i]);
-                    }
-                    Console.WriteLine(Command);
-                    ASCIIEncoding asen = new ASCIIEncoding();
-                    s.Send(asen.GetBytes("The string was recieved by the server."));
-                    Console.WriteLine("\nSent Acknowledgement");
-                    s.Close();
-                    myList.Stop();
+                    Console.WriteLine("Clients: " + _clientSockets.Count);
+                    _clientSockets.Remove(socket);
+                    Console.WriteLine("Clients: " + _clientSockets.Count);
+                    Console.WriteLine("Doctors: " + _doctorSockets.Count);
+                    _doctorSockets.Add(socket);
+                    Console.WriteLine("Doctors: " + _doctorSockets.Count);
+                }
+                else if(message.ToLower() == "get time")
+                {
+                    response = DateTime.Now.ToLongTimeString();
                 }
             }
-            catch (Exception e)
+            if(Id.ToLower() == "client")
             {
-                Console.WriteLine("Error..... " + e.StackTrace);
+                if(message.ToLower() == "connected")
+                {
+                    Console.WriteLine("Clients: " + _clientSockets.Count);
+                }
             }
+            byte[] data = Encoding.ASCII.GetBytes(response);
+            socket.BeginSend(data, 0, data.Length, SocketFlags.None, new AsyncCallback(SendCallback), socket);
+            socket.BeginReceive(_buffer, 0, _buffer.Length, SocketFlags.None, new AsyncCallback(ReceiveCallback), socket);
+
+
+        }
+        private static void SendCallback(IAsyncResult ar)
+        {
+            Socket socket = (Socket)ar.AsyncState;
+            socket.EndSend(ar);
         }
     }
 }
