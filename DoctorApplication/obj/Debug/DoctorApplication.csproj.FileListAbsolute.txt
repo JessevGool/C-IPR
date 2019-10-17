@@ -11,3 +11,11 @@ E:\School\P2\C-IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csprojAss
 E:\School\P2\C-IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.CopyComplete
 E:\School\P2\C-IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.exe
 E:\School\P2\C-IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.pdb
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe.config
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.pdb
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\bin\Debug\BLELibrary.dll
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csprojAssemblyReference.cache
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.CopyComplete
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.exe
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.pdb

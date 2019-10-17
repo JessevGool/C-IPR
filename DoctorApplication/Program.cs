@@ -24,6 +24,7 @@ namespace DoctorApplication
 
         private static void SendLoop()
         {
+           
             while (true)
             {
                 Console.Write("Enter a request: ");
@@ -43,6 +44,10 @@ namespace DoctorApplication
                 else if (prefixwithmessage[0] == "file")
                 {
                     Console.WriteLine($"Received filedata: {prefixwithmessage[1]}");
+                    StreamWriter streamWriter = new StreamWriter(getPath() + "Logs/log.txt");
+                    streamWriter.Write(prefixwithmessage[1]);
+                    streamWriter.Close();
+
                     
                 }
             }
@@ -72,7 +77,14 @@ namespace DoctorApplication
             byte[] buffer = Encoding.ASCII.GetBytes(connected);
             _clientSocket.Send(buffer);
         }
-            
-            
+        public static string getPath()
+        {
+            string startupPath = System.IO.Directory.GetCurrentDirectory();
+            string Startsplit = startupPath.Substring(0, startupPath.LastIndexOf("bin"));
+            string split = Startsplit.Replace(@"\", "/");
+            return split;
+        }
+
     }
+
 }
