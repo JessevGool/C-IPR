@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BikeSession.cs" />
     <Compile Include="Incoming messages\GeneralDataMessage.cs" />
     <Compile Include="Incoming messages\HearthDataMessage.cs" />
     <Compile Include="Incoming messages\IMessageObserver.cs" />
