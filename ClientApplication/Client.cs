@@ -7,16 +7,29 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DoctorApplication
+namespace ClientApplication
 {
-    class Program
+    class Client
     {
         private static Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        private static string _prefixmessage = "doctor/message##";
-        private static string _prefixfile = "doctor/file##";
+        private static string _prefix = "client##";
+        
+        private string name;
+        private int age;
+        private double weight;
+        private int gender;
+        public Client(string name,int age,double weight,int gender)
+        {
+            this.name = name;
+            this.age = age;
+            this.weight = weight;
+            this.gender = gender;
+        }
+
         static void Main(string[] args)
         {
-            Console.Title = "Doctor_Client";
+           
+            Console.Title = "Client";
             LoopConnect();
             SendLoop();
             Console.ReadLine();
@@ -26,25 +39,30 @@ namespace DoctorApplication
         {
             while (true)
             {
+                ReceiveMessage();
                 Console.Write("Enter a request: ");
-                string req = _prefixmessage+Console.ReadLine();
+                string req = _prefix + Console.ReadLine();
                 byte[] buffer = Encoding.ASCII.GetBytes(req);
                 _clientSocket.Send(buffer);
-                byte[] receivedBuffer = new byte[1024];
-                int rec = _clientSocket.Receive(receivedBuffer);
-                byte[] data = new byte[rec];
-                Array.Copy(receivedBuffer, data, rec);
-                string serverresponse = Encoding.ASCII.GetString(data);
-                string[] prefixwithmessage = serverresponse.Split(new[] { "//" }, StringSplitOptions.None);
-                if (prefixwithmessage[0] == "message")
-                {
-                    Console.WriteLine($"Received String: {prefixwithmessage[1]}");
-                }
-                else if (prefixwithmessage[0] == "file")
-                {
-                    Console.WriteLine($"Received filedata: {prefixwithmessage[1]}");
-                    
-                }
+
+                
+            }
+        }
+        private static void ReceiveMessage()
+        {
+            byte[] receivedBuffer = new byte[1024];
+            int rec = _clientSocket.Receive(receivedBuffer);
+            byte[] data = new byte[rec];
+            Array.Copy(receivedBuffer, data, rec);
+            string serverresponse = Encoding.ASCII.GetString(data);
+            string[] prefixwithmessage = serverresponse.Split(new[] { "//" }, StringSplitOptions.None);
+            if (prefixwithmessage[0] == "message")
+            {
+                Console.WriteLine($"Received String: {prefixwithmessage[1]}");
+            }
+            else if (prefixwithmessage[1] == "file")
+            {
+
             }
         }
 
@@ -54,7 +72,7 @@ namespace DoctorApplication
             while (!_clientSocket.Connected)
             {
 
-                
+
                 try
                 {
                     attempts++;
@@ -68,11 +86,10 @@ namespace DoctorApplication
             }
             Console.Clear();
             Console.WriteLine("Connected");
-            string connected = "doctor/message##connected";
+            string connected = "client##connected";
             byte[] buffer = Encoding.ASCII.GetBytes(connected);
             _clientSocket.Send(buffer);
+
         }
-            
-            
     }
 }

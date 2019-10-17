@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -14,6 +15,8 @@ namespace ServerApplication
         private static List<Socket> _clientSockets = new List<Socket>();
         private static List<Socket> _doctorSockets = new List<Socket>();
         private static Socket _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        private static string _stringprefix = "message//";
+        private static string _fileprefix = "file//";
         static void Main(string[] args)
         {
             Console.Title = "Server";
@@ -51,9 +54,9 @@ namespace ServerApplication
             Console.WriteLine($"Received text: {message} from: {Id}");
 
             string response = string.Empty;
-            if (Id.ToLower() == "doctor")
+            if (Id.ToLower() == "doctor/message")
             {
-                if(message.ToLower() == "connected")
+                if (message.ToLower() == "connected")
                 {
                     Console.WriteLine("Clients: " + _clientSockets.Count);
                     _clientSockets.Remove(socket);
@@ -62,16 +65,51 @@ namespace ServerApplication
                     _doctorSockets.Add(socket);
                     Console.WriteLine("Doctors: " + _doctorSockets.Count);
                 }
-                else if(message.ToLower() == "get time")
+                else if (message.ToLower() == "get time")
                 {
-                    response = DateTime.Now.ToLongTimeString();
+                    response = _stringprefix + DateTime.Now.ToLongTimeString();
+                }
+                else if (message.ToLower() == "start test")
+                {
+                    string startTest = _stringprefix + "start test";
+                    byte[] sendStart = Encoding.ASCII.GetBytes(startTest);
+
+                    foreach (Socket client in _clientSockets)
+                    {
+
+                        client.BeginSend(sendStart, 0, sendStart.Length, SocketFlags.None, new AsyncCallback(SendCallback), client);
+                    }
+                    response = _stringprefix + "Command has been sent to client";
+                }
+                else if (message.ToLower() == "get logs")
+                {
+                    response = _stringprefix + getLogs();
+                }
+                else if (message.Contains("get file"))
+                {
+                    string[] filename = message.Split(new[] { "//" }, StringSplitOptions.None);
+                    string realfilename = $"{getPath()}Logs/{filename[1]}";
+                    string filetext = System.IO.File.ReadAllText(realfilename);
+                    response = _fileprefix + filetext;
+
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Request");
+                    response = _stringprefix + "Invalid Request";
                 }
             }
+           
             if(Id.ToLower() == "client")
             {
                 if(message.ToLower() == "connected")
                 {
                     Console.WriteLine("Clients: " + _clientSockets.Count);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Request");
+                    response = _stringprefix + "Invalid Request";
                 }
             }
             byte[] data = Encoding.ASCII.GetBytes(response);
@@ -84,6 +122,36 @@ namespace ServerApplication
         {
             Socket socket = (Socket)ar.AsyncState;
             socket.EndSend(ar);
+        }
+
+        public static string getLogs()
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                string[] arraypaths = Directory.GetFiles(getPath() + "Logs/");
+                foreach (string path in arraypaths)
+                {
+                    string filename = Path.GetFileName(path);
+
+                    sb.AppendLine(filename);
+                }
+                return sb.ToString();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return e.Message;
+            }
+
+
+        }
+        public static string getPath()
+        {
+            string startupPath = System.IO.Directory.GetCurrentDirectory();
+            string Startsplit = startupPath.Substring(0, startupPath.LastIndexOf("bin"));
+            string split = Startsplit.Replace(@"\", "/");
+            return split;
         }
     }
 }
