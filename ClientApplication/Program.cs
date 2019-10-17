@@ -43,7 +43,6 @@ namespace ClientApplication
             while (!_clientSocket.Connected)
             {
 
-
                 try
                 {
                     attempts++;

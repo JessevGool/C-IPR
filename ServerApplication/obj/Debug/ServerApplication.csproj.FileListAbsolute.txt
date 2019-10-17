@@ -4,3 +4,9 @@ E:\School\P2\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe
 E:\School\P2\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.pdb
 E:\School\P2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.exe
 E:\School\P2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe.config
+C:\huiswerk\Project_2.1\individueel\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe
+C:\huiswerk\Project_2.1\individueel\C-IPR\ServerApplication\bin\Debug\ServerApplication.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\ServerApplication\obj\Debug\ServerApplication.exe
+C:\huiswerk\Project_2.1\individueel\C-IPR\ServerApplication\obj\Debug\ServerApplication.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\ServerApplication\obj\Debug\ServerApplication.csprojAssemblyReference.cache

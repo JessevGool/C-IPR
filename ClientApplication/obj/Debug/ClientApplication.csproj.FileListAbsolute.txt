@@ -3,3 +3,9 @@ E:\School\P2\IPR\C-IPR\ClientApplication\bin\Debug\ClientApplication.exe
 E:\School\P2\IPR\C-IPR\ClientApplication\bin\Debug\ClientApplication.pdb
 E:\School\P2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.exe
 E:\School\P2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\bin\Debug\ClientApplication.exe.config
+C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\bin\Debug\ClientApplication.exe
+C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\bin\Debug\ClientApplication.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\obj\Debug\ClientApplication.csprojAssemblyReference.cache
+C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\obj\Debug\ClientApplication.exe
+C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\obj\Debug\ClientApplication.pdb

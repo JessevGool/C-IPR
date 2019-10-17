@@ -3,3 +3,9 @@ E:\School\P2\IPR\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe
 E:\School\P2\IPR\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.pdb
 E:\School\P2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.exe
 E:\School\P2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe.config
+C:\huiswerk\Project_2.1\individueel\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe
+C:\huiswerk\Project_2.1\individueel\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.pdb
+C:\huiswerk\Project_2.1\individueel\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csprojAssemblyReference.cache
+C:\huiswerk\Project_2.1\individueel\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.exe
+C:\huiswerk\Project_2.1\individueel\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.pdb
