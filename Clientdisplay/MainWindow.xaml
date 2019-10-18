@@ -1,0 +1,33 @@
+﻿<Window x:Class="Clientdisplay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clientdisplay"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnConnect" Width="100" Height="50" Margin="682,10,10,359" Content="Verbind" Click="BtnConnect_Click"></Button>
+        <Button x:Name="btnSimulate" Width="100" Height="50" Margin="682,64,10,305" Content="Start simulatie" Click="BtnSimulate_Click"></Button>
+
+        <Label Name="lblSpeed" Content="Snelheid: " Margin="10,10,549,369"></Label>
+        <Label Name="lblDistance" Content="Afstand afgelegd: " Margin="10,46,549,336"></Label>
+        <Label Name="lblTime" Content="Tijd sinds begin: " Margin="10,88,549,292"></Label>
+
+        <ScrollViewer Margin="578,158,9.6,10">
+            <Label x:Name="log"  Content="Log: 
+                       
+                    " Height="190" />
+
+        </ScrollViewer>
+
+        <Label Name="lblHearthRate" Content="Hartslag: " Margin="10,132,549,245" />
+        <ListBox Name="bycicleBox" HorizontalAlignment="Left" Height="100" Margin="577,14,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="BycicleBox_SelectionChanged" />
+        <Label Name="CurrentlyConnectedLabel"  Content="Label" HorizontalAlignment="Left" Margin="311,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.145" Width="267"/>
+        <Label Name="lblVoltage" Content="Voltage: " HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="235"/>
+        <Button Name="btnServer" Content="Verstuur naar server&#xD;&#xA;" HorizontalAlignment="Left" Margin="655,120,0,0" VerticalAlignment="Top" Width="128" Height="27"/>
+        <Label Name="lblConnection" Content="Label" HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top"/>
+        <Button Content="Send resistance&#xD;&#xA;" HorizontalAlignment="Left" Margin="539,120,0,0" VerticalAlignment="Top" Width="111" Click="Button_Click"/>
+        <Button Name="Reconnect" Content="Reconnect" HorizontalAlignment="Left" Margin="423,120,0,0" VerticalAlignment="Top" Width="111" />
+    </Grid>
+</Window>

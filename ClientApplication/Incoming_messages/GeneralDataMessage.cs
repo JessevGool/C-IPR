@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RemoteHealthcare.Incoming_messages
+namespace ClientApplication.Incoming_messages
 {
     public class GeneralDataMessage : Message
     {

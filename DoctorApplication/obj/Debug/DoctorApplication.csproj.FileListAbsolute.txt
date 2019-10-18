@@ -19,3 +19,14 @@ E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.cs
 E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.CopyComplete
 E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.exe
 E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.pdb
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe.config
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.pdb
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\bin\Debug\BLELibrary.dll
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csprojAssemblyReference.cache
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.CoreCompileInputs.cache
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.CopyComplete
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.exe
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.pdb
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.DoctorGui.resources
+D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.GenerateResource.cache

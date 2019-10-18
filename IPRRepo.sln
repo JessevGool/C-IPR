@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorApplication", "Doctor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerApplication", "ServerApplication\ServerApplication.csproj", "{C865DDA7-D01F-463B-B72F-744E339973A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientdisplay", "Clientdisplay\Clientdisplay.csproj", "{712FDB32-AC29-494E-B985-C523E230A0AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C865DDA7-D01F-463B-B72F-744E339973A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C865DDA7-D01F-463B-B72F-744E339973A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C865DDA7-D01F-463B-B72F-744E339973A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712FDB32-AC29-494E-B985-C523E230A0AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712FDB32-AC29-494E-B985-C523E230A0AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712FDB32-AC29-494E-B985-C523E230A0AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712FDB32-AC29-494E-B985-C523E230A0AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

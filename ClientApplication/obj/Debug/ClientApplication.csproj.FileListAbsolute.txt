@@ -9,3 +9,14 @@ C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\bin\Debug\ClientAppl
 C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\obj\Debug\ClientApplication.csprojAssemblyReference.cache
 C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\obj\Debug\ClientApplication.exe
 C:\huiswerk\Project_2.1\individueel\C-IPR\ClientApplication\obj\Debug\ClientApplication.pdb
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\bin\Debug\ClientApplication.exe.config
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\bin\Debug\ClientApplication.exe
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\bin\Debug\ClientApplication.pdb
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\bin\Debug\BLELibrary.dll
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\bin\Debug\Newtonsoft.Json.dll
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\bin\Debug\Newtonsoft.Json.xml
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.csprojAssemblyReference.cache
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.csproj.CoreCompileInputs.cache
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.csproj.CopyComplete
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.exe
+D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.pdb

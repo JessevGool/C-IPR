@@ -9,3 +9,15 @@ C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.exe
 C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.pdb
 C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\bin\Debug\BLELibrary.dll
 C:\huiswerk\Project_2.1\individueel\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CopyComplete
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe.config
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.pdb
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\bin\Debug\BLELibrary.dll
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csprojAssemblyReference.cache
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.Form1.resources
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.Properties.Resources.resources
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.GenerateResource.cache
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CoreCompileInputs.cache
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CopyComplete
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.exe
+D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.pdb

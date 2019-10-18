@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DoctorApplication
 {
-    class Program
+    class DoctorClient
     {
         private static Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         private static string _prefixmessage = "doctor/message##";

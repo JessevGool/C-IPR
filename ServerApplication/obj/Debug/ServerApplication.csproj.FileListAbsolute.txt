@@ -20,3 +20,12 @@ E:\School\P2\C-IPR\C-IPR@\C-IPR\ServerApplication\obj\Debug\ServerApplication.cs
 E:\School\P2\C-IPR\C-IPR@\C-IPR\ServerApplication\obj\Debug\ServerApplication.csproj.CopyComplete
 E:\School\P2\C-IPR\C-IPR@\C-IPR\ServerApplication\obj\Debug\ServerApplication.exe
 E:\School\P2\C-IPR\C-IPR@\C-IPR\ServerApplication\obj\Debug\ServerApplication.pdb
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe.config
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.pdb
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\bin\Debug\BLELibrary.dll
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.csprojAssemblyReference.cache
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.csproj.CoreCompileInputs.cache
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.csproj.CopyComplete
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.exe
+D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.pdb

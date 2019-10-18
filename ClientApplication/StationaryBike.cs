@@ -1,5 +1,5 @@
 ﻿using Avans.TI.BLE;
-using RemoteHealthcare.Incoming_messages;
+using ClientApplication.Incoming_messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RemoteHealthcare
+namespace ClientApplication
 {
     class StationaryBike
     {
