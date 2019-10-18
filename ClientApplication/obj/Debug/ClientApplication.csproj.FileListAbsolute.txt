@@ -20,3 +20,13 @@ D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.csproj.Cor
 D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.csproj.CopyComplete
 D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.exe
 D:\Leerjaar 2\IPR\C-IPR\ClientApplication\obj\Debug\ClientApplication.pdb
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\bin\Debug\ClientApplication.exe.config
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\bin\Debug\ClientApplication.exe
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\bin\Debug\ClientApplication.pdb
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\bin\Debug\BLELibrary.dll
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\bin\Debug\Newtonsoft.Json.dll
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\bin\Debug\Newtonsoft.Json.xml
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\obj\Debug\ClientApplication.csprojAssemblyReference.cache
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\obj\Debug\ClientApplication.csproj.CopyComplete
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\obj\Debug\ClientApplication.exe
+E:\School\P2\C-IPR\C-IPR@\C-IPR\ClientApplication\obj\Debug\ClientApplication.pdb

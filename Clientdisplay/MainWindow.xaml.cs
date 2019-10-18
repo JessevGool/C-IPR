@@ -1,5 +1,5 @@
-﻿using ClientApplication;
-using ClientApplication.Incoming_messages;
+﻿using Newtonsoft.Json;
+using Clientdisplay.Incoming_messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,47 +26,24 @@ namespace Clientdisplay
         private BikeSession bikeSession;
         private bool simulationRunning;
         private StationaryBike stationaryBike;
-        public static ListBox byciclebox;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            byciclebox = bycicleBox;
             CurrentlyConnectedLabel.Content = "Not connected to a bike";
 
             bycicleBox.Items.Add("01140");
             bycicleBox.Items.Add("00457");
             bycicleBox.Items.Add("24517");
             bycicleBox.Items.Add("00438");
-            bycicleBox.Items.Add("00472");
 
+            //StationaryBike stationaryBike = new StationaryBike();
             bikeSession = new BikeSession();
             stationaryBike = new StationaryBike(this, bikeSession);
             simulationRunning = false;
-        }
 
-        public void ChangeValues(Message message)
-        {
-            if (message == null)
-                return;
 
-            //Allow other threads to work on the UI thread.xp
-            Application.Current.Dispatcher.Invoke(new Action(() => {
-                switch (message)
-                {
-                    case GeneralDataMessage generalMessage:
-                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.CurrentBikeValue.Speed.ToString());
-                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.CurrentBikeValue.MetersTravelled.ToString());
-                        lblTime.Content = string.Format("Tijd sinds begin: {0} seconden", bikeSession.CurrentBikeValue.TimeSinceStart.ToString());
-                        break;
-                    case StationaryDataMessage stationaryMessage:
-                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.CurrentBikeValue.Voltage.ToString());
-                        break;
-                    case HearthDataMessage hearthDataMessage:
-                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.CurrentBikeValue.HearthBeats.ToString());
-                        break;
-                }
-            }));
         }
         public static string getPath()
         {
@@ -75,12 +52,42 @@ namespace Clientdisplay
             string split = Startsplit.Replace(@"\", "/");
             return split;
         }
+
+        public void ChangeValues(Message message)
+        {
+            if (message == null)
+                return;
+
+            //Allow other threads to work on the UI thread.
+            Application.Current.Dispatcher.Invoke(new Action(() => {
+                switch (message)
+                {
+                    case GeneralDataMessage generalMessage:
+                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
+                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
+                        lblTime.Content = string.Format("Tijd sinds begin: {0} seconden", bikeSession.GetTimeSinceStart().ToString());
+                        break;
+                    case StationaryDataMessage stationaryMessage:
+                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.GetVoltage().ToString());
+                        break;
+                    case HearthDataMessage hearthDataMessage:
+                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
+                        break;
+                }
+            }));
+        }
+
+        public void Log(string message)
+        {
+            Application.Current.Dispatcher.Invoke(new Action(() => {
+                log.Content += message + "\n";
+            }));
+        }
+
         private void BtnSimulate_Click(object sender, RoutedEventArgs e)
         {
             simulationRunning = !simulationRunning;
-
             String simulatedData = System.IO.File.ReadAllText(getPath() + "Resources/simulatie.txt");
-
             List<byte[]> bytes = new List<byte[]>();
             string[] stringBytes = simulatedData.Split('#');
 
@@ -130,9 +137,6 @@ namespace Clientdisplay
                     }
 
                     ChangeValues(message);
-                    bikeSession.SaveValue();
-                   
-
 
                     counter++;
                     Thread.Sleep(250);
@@ -152,30 +156,11 @@ namespace Clientdisplay
 
         }
 
-        public void Log(string message)
-        {
-            Application.Current.Dispatcher.Invoke(new Action(() => {
-                log.Content += message + "\n";
-            }));
-        }
-        private void BycicleBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            this.stationaryBike.ConnectionNumber = bycicleBox.SelectedItem.ToString();
-        }
-
-      
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            stationaryBike.SendResistance(100);
-        }
 
 
         private void BtnConnect_Click(object sender, RoutedEventArgs e)
         {
-
             stationaryBike.StartConnection();
-
             if (bycicleBox.SelectedItem == null)
             {
                 this.stationaryBike.ConnectionNumber = "01140";
@@ -186,7 +171,10 @@ namespace Clientdisplay
                 CurrentlyConnectedLabel.Content = string.Format("Using: {0}", bycicleBox.SelectedItem.ToString());
             }
         }
+
+        private void BycicleBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.stationaryBike.ConnectionNumber = bycicleBox.SelectedItem.ToString();
+        }
     }
-
-
 }
