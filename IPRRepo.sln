@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPRRepo", "WindowsFormsApp2\IPRRepo.csproj", "{A8CF4D05-CAEF-4E6C-8D94-F5611CC074AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplication", "ClientApplication\ClientApplication.csproj", "{886ED4D7-C9EE-4724-A6E0-FF86EB070968}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorApplication", "DoctorApplication\DoctorApplication.csproj", "{17B7B888-54D7-4DAE-9EF3-4E24E9AA2BAD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerApplication", "ServerApplication\ServerApplication.csproj", "{C865DDA7-D01F-463B-B72F-744E339973A1}"
@@ -23,10 +21,6 @@ Global
 		{A8CF4D05-CAEF-4E6C-8D94-F5611CC074AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8CF4D05-CAEF-4E6C-8D94-F5611CC074AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8CF4D05-CAEF-4E6C-8D94-F5611CC074AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{886ED4D7-C9EE-4724-A6E0-FF86EB070968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{886ED4D7-C9EE-4724-A6E0-FF86EB070968}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{886ED4D7-C9EE-4724-A6E0-FF86EB070968}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{886ED4D7-C9EE-4724-A6E0-FF86EB070968}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17B7B888-54D7-4DAE-9EF3-4E24E9AA2BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{17B7B888-54D7-4DAE-9EF3-4E24E9AA2BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17B7B888-54D7-4DAE-9EF3-4E24E9AA2BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Windows.Threading;
 
 namespace Clientdisplay
 {
@@ -23,14 +25,20 @@ namespace Clientdisplay
     /// </summary>
     public partial class MainWindow : Window, IMessageObserver
     {
+       
         private BikeSession bikeSession;
         private bool simulationRunning;
         private StationaryBike stationaryBike;
-
+       
+        private Stopwatch AstrandWatch = new Stopwatch();
+        private DispatcherTimer AstrandTimer = new DispatcherTimer();
+        string currentTime = string.Empty;
+       
         public MainWindow()
         {
             InitializeComponent();
-
+            AstrandTimer.Tick += new EventHandler(dt_Tick);
+            AstrandTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             CurrentlyConnectedLabel.Content = "Not connected to a bike";
 
             bycicleBox.Items.Add("01140");
@@ -44,6 +52,35 @@ namespace Clientdisplay
             simulationRunning = false;
 
 
+        }
+        void dt_Tick(object sender, EventArgs e)
+        {
+            if (AstrandWatch.IsRunning)
+            {
+                TimeSpan ts = AstrandWatch.Elapsed;
+                currentTime = String.Format("{0:00}:{1:00}",
+                ts.Minutes, ts.Seconds);
+                timelbl.Content = $"Session Time: {currentTime} ";
+
+                
+                int elapsedTime = (int)AstrandWatch.Elapsed.TotalSeconds;
+                if (elapsedTime < 120)
+                {
+                    Statuslbl.Content = $"Warming up: {120 - elapsedTime}";
+                }
+                else if (elapsedTime > 120 && elapsedTime < 360)
+                {
+                    Statuslbl.Content = $"Astrand Test: {360 - elapsedTime}";
+                }
+                else if (elapsedTime > 360 && elapsedTime < 420)
+                {
+                    Statuslbl.Content = $"Cool down: {420 - elapsedTime}";
+                }
+                else if (elapsedTime > 420)
+                {
+                    Statuslbl.Content = "You can stop now";
+                }
+            }
         }
         public static string getPath()
         {
@@ -175,6 +212,28 @@ namespace Clientdisplay
         private void BycicleBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.stationaryBike.ConnectionNumber = bycicleBox.SelectedItem.ToString();
+        }
+
+        private void Startbtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+            AstrandWatch.Start();
+            AstrandTimer.Start();
+        }
+        
+
+        private void Stopbtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (AstrandWatch.IsRunning)
+            {
+                AstrandWatch.Stop();
+                AstrandWatch.Reset();
+            }
+            
+            TimeSpan ts = AstrandWatch.Elapsed;
+            currentTime = String.Format("{0:00}:{1:00}:{2:00}",
+            ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
+            timelbl.Content = $"Session Time: {currentTime}";
         }
     }
 }
