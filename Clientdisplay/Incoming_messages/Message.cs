@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClientApplication.Incoming_messages
+namespace Clientdisplay.Incoming_messages
 {
     public abstract class Message
     {

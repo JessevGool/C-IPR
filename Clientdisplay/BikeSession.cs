@@ -1,16 +1,13 @@
-﻿using ClientApplication.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClientApplication
+namespace Clientdisplay
 {
     public class BikeSession
     {
-        private BikeValue currentBikeValue;
-        private List<BikeValue> bikeValues;
         private double timeSinceStart;
         private int timeAmountOfCycles;
         private int lastKnownTime;
@@ -26,7 +23,6 @@ namespace ClientApplication
 
         public BikeSession()
         {
-
             this.timeSinceStart = 0;
             this.timeAmountOfCycles = 0;
             this.lastKnownTime = 0;
@@ -44,10 +40,10 @@ namespace ClientApplication
         public void addTime(int time)
         {
             //is time smaller than the last recieved time?
-                //yes? we have entered a new cycle
-                    //timeSinceStart = (amount of cycles(1) * 255) + time        
+            //yes? we have entered a new cycle
+            //timeSinceStart = (amount of cycles(1) * 255) + time        
 
-                //no? contine adding the time.
+            //no? contine adding the time.
             if (time < lastKnownTime)
             {
                 timeAmountOfCycles++;
@@ -59,7 +55,7 @@ namespace ClientApplication
 
         public void addMetersTravelled(int metersTravelled)
         {
-            if(metersTravelled < lastKnownDistance)
+            if (metersTravelled < lastKnownDistance)
             {
                 distanceAmountOfCycles++;
             }
@@ -76,10 +72,6 @@ namespace ClientApplication
         public void SetHearthBeats(long hearthBeats)
         {
             this.hearthBeats = hearthBeats;
-        }
-        public BikeValue CurrentBikeValue
-        {
-            get { return currentBikeValue; }
         }
 
         public long GetHearthBeats()
@@ -110,10 +102,6 @@ namespace ClientApplication
         public void SetVoltage(int voltage)
         {
             this.voltage = voltage;
-        }
-        public void SaveValue()
-        {
-            this.bikeValues.Add(this.currentBikeValue);
         }
     }
 }

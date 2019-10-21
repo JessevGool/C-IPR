@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Clientdisplay;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClientApplication.Incoming_messages
+namespace Clientdisplay.Incoming_messages
 {
     class HearthDataMessage : Message
     {

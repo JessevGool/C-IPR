@@ -14,10 +14,10 @@
         <Label Name="lblDistance" Content="Afstand afgelegd: " Margin="10,46,549,336"></Label>
         <Label Name="lblTime" Content="Tijd sinds begin: " Margin="10,88,549,292"></Label>
 
-        <ScrollViewer Margin="578,158,9.6,10">
+        <ScrollViewer Margin="578,127,9.6,10">
             <Label x:Name="log"  Content="Log: 
                        
-                    " Height="190" />
+                    " />
 
         </ScrollViewer>
 
@@ -25,9 +25,5 @@
         <ListBox Name="bycicleBox" HorizontalAlignment="Left" Height="100" Margin="577,14,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="BycicleBox_SelectionChanged" />
         <Label Name="CurrentlyConnectedLabel"  Content="Label" HorizontalAlignment="Left" Margin="311,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.145" Width="267"/>
         <Label Name="lblVoltage" Content="Voltage: " HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="235"/>
-        <Button Name="btnServer" Content="Verstuur naar server&#xD;&#xA;" HorizontalAlignment="Left" Margin="655,120,0,0" VerticalAlignment="Top" Width="128" Height="27"/>
-        <Label Name="lblConnection" Content="Label" HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top"/>
-        <Button Content="Send resistance&#xD;&#xA;" HorizontalAlignment="Left" Margin="539,120,0,0" VerticalAlignment="Top" Width="111" Click="Button_Click"/>
-        <Button Name="Reconnect" Content="Reconnect" HorizontalAlignment="Left" Margin="423,120,0,0" VerticalAlignment="Top" Width="111" />
     </Grid>
 </Window>
