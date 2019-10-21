@@ -18,7 +18,7 @@ namespace Clientdisplay.Incoming_messages
         {
             //TODO: implement the following values into the GUI
             Byte powerWattsV1 = (byte)((((byte)data[7]) << 8) | ((byte)data[8]));
-            bikeSession.SetVoltage((int)powerWattsV1);
+            bikeSession.Voltage = (int)powerWattsV1;
 
 
             Byte bitShiftedByte2 = (byte)((((byte)data[9]) << 8) | ((byte)data[10])); //deze moet nog worden ingesteld

@@ -27,7 +27,7 @@ namespace Clientdisplay
         private bool simulationRunning;
         private StationaryBike stationaryBike;
 
-        public MainWindow()
+        public MainWindow(int age , double weight, string sex)
         {
             InitializeComponent();
 
@@ -63,15 +63,15 @@ namespace Clientdisplay
                 switch (message)
                 {
                     case GeneralDataMessage generalMessage:
-                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
-                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
+                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.Speed.ToString());
+                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.MetersTravelled.ToString());
                         lblTime.Content = string.Format("Tijd sinds begin: {0} seconden", bikeSession.GetTimeSinceStart().ToString());
                         break;
                     case StationaryDataMessage stationaryMessage:
-                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.GetVoltage().ToString());
+                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.Voltage.ToString());
                         break;
                     case HearthDataMessage hearthDataMessage:
-                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
+                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.HearthBeats.ToString());
                         break;
                 }
             }));
