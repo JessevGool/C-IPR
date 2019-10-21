@@ -19,7 +19,7 @@ namespace Clientdisplay.Incoming_messages
             String stringData = BitConverter.ToString(data);
             if (stringData.Substring(0, 2).Equals("16"))
             {
-                this.bikeSession.SetHearthBeats(Convert.ToInt32(stringData.Substring(3, 2), 16));
+                this.bikeSession.HearthBeats = Convert.ToInt32(stringData.Substring(3, 2), 16);
             }
         }
     }

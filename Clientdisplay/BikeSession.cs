@@ -11,15 +11,14 @@ namespace Clientdisplay
         private double TimeSinceStart;
         private int TimeAmountOfCycles;
         private int LastKnownTime;
-
-        private float MetersTravelled;
         private int DistanceAmountOfCycles;
         private int LastKnownDistance;
 
-        private double Speed;
-        private long HearthBeats;
+        public float MetersTravelled { get; set; }
+        public double Speed { get; set; }
+        public long HearthBeats { get; set; }
 
-        private int Voltage;
+        public int Voltage { get; set; }
 
         public BikeSession()
         {
@@ -64,44 +63,9 @@ namespace Clientdisplay
             LastKnownDistance = metersTravelled;
         }
 
-        public void SetSpeed(double speed)
-        {
-            this.Speed = speed;
-        }
-
-        public void SetHearthBeats(long hearthBeats)
-        {
-            this.HearthBeats = hearthBeats;
-        }
-
-        public long GetHearthBeats()
-        {
-            return this.HearthBeats;
-        }
-
         public double GetTimeSinceStart()
         {
             return this.TimeSinceStart * 0.25;
-        }
-
-        public float GetMetersTravelled()
-        {
-            return this.MetersTravelled;
-        }
-
-        public double GetSpeed()
-        {
-            return this.Speed;
-        }
-
-        public int GetVoltage()
-        {
-            return this.Voltage;
-        }
-
-        public void SetVoltage(int voltage)
-        {
-            this.Voltage = voltage;
         }
     }
 }
