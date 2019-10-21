@@ -25,7 +25,7 @@ namespace Clientdisplay.Incoming_messages
             bikeSession.addMetersTravelled((int)metersTravelled);
 
             Byte speed = (byte)((((byte)data[8]) << 8) | ((byte)data[9]));
-            bikeSession.Speed = speed;
+            bikeSession.SetSpeed(speed);
         }
     }
 }

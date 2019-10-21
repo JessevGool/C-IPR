@@ -30,13 +30,13 @@ namespace Clientdisplay
         private bool simulationRunning;
         private StationaryBike stationaryBike;
 
-        public MainWindow(int age , double weight, string sex)
+       
        
         private Stopwatch AstrandWatch = new Stopwatch();
         private DispatcherTimer AstrandTimer = new DispatcherTimer();
         string currentTime = string.Empty;
-       
-        public MainWindow()
+
+        public MainWindow(int age, double weight, string sex) 
         {
             InitializeComponent();
             AstrandTimer.Tick += new EventHandler(dt_Tick);
@@ -107,10 +107,10 @@ namespace Clientdisplay
                         lblRPM.Content = string.Format("RPM: {0}", bikeSession.GetTimeSinceStart().ToString());
                         break;
                     case StationaryDataMessage stationaryMessage:
-                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.Voltage.ToString());
+                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.GetVoltage().ToString());
                         break;
                     case HearthDataMessage hearthDataMessage:
-                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.HearthBeats.ToString());
+                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
                         break;
                 }
             }));

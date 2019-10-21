@@ -32,3 +32,16 @@ E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.Genera
 E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CopyComplete
 E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.exe
 E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.pdb
+G:\School\CIPR\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe.config
+G:\School\CIPR\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe
+G:\School\CIPR\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.pdb
+G:\School\CIPR\C-IPR\WindowsFormsApp2\bin\Debug\BLELibrary.dll
+G:\School\CIPR\C-IPR\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.dll
+G:\School\CIPR\C-IPR\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.xml
+G:\School\CIPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csprojAssemblyReference.cache
+G:\School\CIPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.Form1.resources
+G:\School\CIPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.Properties.Resources.resources
+G:\School\CIPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.GenerateResource.cache
+G:\School\CIPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CopyComplete
+G:\School\CIPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.exe
+G:\School\CIPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.pdb
