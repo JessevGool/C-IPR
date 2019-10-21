@@ -12,7 +12,7 @@
 
         <Label Name="lblSpeed" Content="Snelheid: " Margin="10,10,549,369"></Label>
         <Label Name="lblDistance" Content="Afstand afgelegd: " Margin="10,46,549,336"></Label>
-        <Label Name="lblTime" Content="Tijd sinds begin: " Margin="10,88,549,292"></Label>
+        <Label x:Name="lblRPM" Content="RPM:" Margin="10,88,549,292"></Label>
 
         <ScrollViewer Margin="578,127,9.6,10">
             <Label x:Name="log"  Content="Log: 

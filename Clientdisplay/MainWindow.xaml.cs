@@ -102,7 +102,7 @@ namespace Clientdisplay
                     case GeneralDataMessage generalMessage:
                         lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
                         lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
-                        lblTime.Content = string.Format("Tijd sinds begin: {0} seconden", bikeSession.GetTimeSinceStart().ToString());
+                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.GetTimeSinceStart().ToString());
                         break;
                     case StationaryDataMessage stationaryMessage:
                         lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.GetVoltage().ToString());
