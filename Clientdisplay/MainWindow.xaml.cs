@@ -1,7 +1,5 @@
-﻿
+﻿using Newtonsoft.Json;
 using Clientdisplay.Incoming_messages;
-using Newtonsoft.Json;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +45,13 @@ namespace Clientdisplay
 
 
         }
+        public static string getPath()
+        {
+            string startupPath = System.IO.Directory.GetCurrentDirectory();
+            string Startsplit = startupPath.Substring(0, startupPath.LastIndexOf("bin"));
+            string split = Startsplit.Replace(@"\", "/");
+            return split;
+        }
 
         public void ChangeValues(Message message)
         {
@@ -82,7 +87,7 @@ namespace Clientdisplay
         private void BtnSimulate_Click(object sender, RoutedEventArgs e)
         {
             simulationRunning = !simulationRunning;
-            string simulatedData = System.IO.File.ReadAllText(@"simulatie.txt");
+            String simulatedData = System.IO.File.ReadAllText(getPath() + "Resources/simulatie.txt");
             List<byte[]> bytes = new List<byte[]>();
             string[] stringBytes = simulatedData.Split('#');
 

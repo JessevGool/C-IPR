@@ -30,3 +30,5 @@ D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.exe
 D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.pdb
 D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.DoctorGui.resources
 D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.GenerateResource.cache
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.DoctorGui.resources
+E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.GenerateResource.cache

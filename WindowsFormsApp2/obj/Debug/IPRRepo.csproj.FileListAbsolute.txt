@@ -21,3 +21,14 @@ D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CoreCompileInp
 D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CopyComplete
 D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.exe
 D:\Leerjaar 2\IPR\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.pdb
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe.config
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.exe
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\bin\Debug\IPRRepo.pdb
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\bin\Debug\BLELibrary.dll
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csprojAssemblyReference.cache
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.Form1.resources
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.Properties.Resources.resources
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.GenerateResource.cache
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.csproj.CopyComplete
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.exe
+E:\School\P2\C-IPR\C-IPR@\C-IPR\WindowsFormsApp2\obj\Debug\IPRRepo.pdb
