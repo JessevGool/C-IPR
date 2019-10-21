@@ -8,33 +8,33 @@ namespace Clientdisplay
 {
     public class BikeSession
     {
-        private double timeSinceStart;
-        private int timeAmountOfCycles;
-        private int lastKnownTime;
+        private double TimeSinceStart;
+        private int TimeAmountOfCycles;
+        private int LastKnownTime;
 
-        private float metersTravelled;
-        private int distanceAmountOfCycles;
-        private int lastKnownDistance;
+        private float MetersTravelled;
+        private int DistanceAmountOfCycles;
+        private int LastKnownDistance;
 
-        private double speed;
-        private long hearthBeats;
+        private double Speed;
+        private long HearthBeats;
 
-        private int voltage;
+        private int Voltage;
 
         public BikeSession()
         {
-            this.timeSinceStart = 0;
-            this.timeAmountOfCycles = 0;
-            this.lastKnownTime = 0;
+            this.TimeSinceStart = 0;
+            this.TimeAmountOfCycles = 0;
+            this.LastKnownTime = 0;
 
-            this.metersTravelled = 0;
-            this.distanceAmountOfCycles = 0;
-            this.lastKnownDistance = 0;
+            this.MetersTravelled = 0;
+            this.DistanceAmountOfCycles = 0;
+            this.LastKnownDistance = 0;
 
-            this.speed = 0;
-            this.hearthBeats = 0;
+            this.Speed = 0;
+            this.HearthBeats = 0;
 
-            this.voltage = 0;
+            this.Voltage = 0;
         }
 
         public void addTime(int time)
@@ -44,64 +44,64 @@ namespace Clientdisplay
             //timeSinceStart = (amount of cycles(1) * 255) + time        
 
             //no? contine adding the time.
-            if (time < lastKnownTime)
+            if (time < LastKnownTime)
             {
-                timeAmountOfCycles++;
+                TimeAmountOfCycles++;
             }
 
-            timeSinceStart = (timeAmountOfCycles * 255) + time;
-            lastKnownTime = time;
+            TimeSinceStart = (TimeAmountOfCycles * 255) + time;
+            LastKnownTime = time;
         }
 
         public void addMetersTravelled(int metersTravelled)
         {
-            if (metersTravelled < lastKnownDistance)
+            if (metersTravelled < LastKnownDistance)
             {
-                distanceAmountOfCycles++;
+                DistanceAmountOfCycles++;
             }
 
-            this.metersTravelled = (distanceAmountOfCycles * 255) + metersTravelled;
-            lastKnownDistance = metersTravelled;
+            this.MetersTravelled = (DistanceAmountOfCycles * 255) + metersTravelled;
+            LastKnownDistance = metersTravelled;
         }
 
         public void SetSpeed(double speed)
         {
-            this.speed = speed;
+            this.Speed = speed;
         }
 
         public void SetHearthBeats(long hearthBeats)
         {
-            this.hearthBeats = hearthBeats;
+            this.HearthBeats = hearthBeats;
         }
 
         public long GetHearthBeats()
         {
-            return this.hearthBeats;
+            return this.HearthBeats;
         }
 
         public double GetTimeSinceStart()
         {
-            return this.timeSinceStart * 0.25;
+            return this.TimeSinceStart * 0.25;
         }
 
         public float GetMetersTravelled()
         {
-            return this.metersTravelled;
+            return this.MetersTravelled;
         }
 
         public double GetSpeed()
         {
-            return this.speed;
+            return this.Speed;
         }
 
         public int GetVoltage()
         {
-            return this.voltage;
+            return this.Voltage;
         }
 
         public void SetVoltage(int voltage)
         {
-            this.voltage = voltage;
+            this.Voltage = voltage;
         }
     }
 }

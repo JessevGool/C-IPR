@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Encrypter.cs" />
     <Compile Include="StationaryBike.cs" />
     <Compile Include="Writer.cs" />
     <Page Include="MainWindow.xaml">
