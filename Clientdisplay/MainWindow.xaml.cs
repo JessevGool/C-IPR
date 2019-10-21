@@ -17,6 +17,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Threading;
+using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
 
 namespace Clientdisplay
 {
@@ -30,8 +33,9 @@ namespace Clientdisplay
         private bool simulationRunning;
         private StationaryBike stationaryBike;
 
-       
-       
+       private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
+        private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
+
         private Stopwatch AstrandWatch = new Stopwatch();
         private DispatcherTimer AstrandTimer = new DispatcherTimer();
         string currentTime = string.Empty;
@@ -53,6 +57,29 @@ namespace Clientdisplay
             stationaryBike = new StationaryBike(this, bikeSession);
             simulationRunning = false;
 
+            CartesianChart ch = new CartesianChart();
+
+            ChartSpeedValues = new ChartValues<ObservableValue>();
+            ChartMetersTravelled = new ChartValues<ObservableValue>();
+
+            ch.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Snelheid",
+                    Values = ChartSpeedValues
+                },
+                new LineSeries
+                {
+                    Title = "Meters travelled",
+                    Values = ChartMetersTravelled
+                }
+
+
+
+
+            };
+            chartGrid.Children.Add(ch);
 
         }
         void dt_Tick(object sender, EventArgs e)
@@ -105,6 +132,8 @@ namespace Clientdisplay
                         lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
                         lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
                         lblRPM.Content = string.Format("RPM: {0}", bikeSession.GetTimeSinceStart().ToString());
+                        ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
+                        ChartMetersTravelled.Add(new ObservableValue(bikeSession.GetMetersTravelled()));
                         break;
                     case StationaryDataMessage stationaryMessage:
                         lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.GetVoltage().ToString());

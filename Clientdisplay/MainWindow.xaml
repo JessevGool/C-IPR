@@ -30,6 +30,7 @@
         <Button x:Name="Startbtn" Content="Start test" HorizontalAlignment="Left" Margin="473,10,0,0" VerticalAlignment="Top" Width="100" Height="50" Click="Startbtn_Click"/>
         <Button x:Name="SendFilebtn" Content="Stuur naar server" HorizontalAlignment="Left" Margin="473,119,0,0" VerticalAlignment="Top" Width="100" Height="50"/>
         <Label x:Name="Statuslbl" Content="Session Status:" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="563" Height="84" FontSize="20"/>
+        <Grid Name="chartGrid" Height="155" VerticalAlignment="Bottom" Margin="181,0,324,250"/>
 
     </Grid>
 </Window>
