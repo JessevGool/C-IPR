@@ -274,5 +274,18 @@ namespace Clientdisplay
             ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
             timelbl.Content = $"Session Time: {currentTime}";
         }
+
+        private double femaleVo2(int age, double workload, double heartRate)
+        {
+            return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100);
+        }
+
+        private double correction(int age)
+        {
+            if ()
+            {
+
+            }
+        }
     }
 }
