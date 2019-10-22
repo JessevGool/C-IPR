@@ -80,11 +80,11 @@ namespace Clientdisplay
             }
 
             return true;
-        }
-
-        private void Name_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        }
+
+        private void Name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
