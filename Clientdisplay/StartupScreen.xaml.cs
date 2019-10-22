@@ -23,6 +23,11 @@ namespace Clientdisplay
         public StartupScreen()
         {
             InitializeComponent();
+            List<string> genders = new List<string>();
+            genders.Add("man");
+            genders.Add("women");
+            Sex.ItemsSource = genders;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -51,10 +56,10 @@ namespace Clientdisplay
             {
                 Sex.Background = Brushes.White;
             }
-            if ((Sex.Text.ToLower().Equals("man") || Sex.Text.ToLower().Equals("women")) && IsDigitsOnly(Weight.Text) && IsDigitsOnly(Age.Text))
+            if ((Sex.Text.ToLower().Equals("man") || Sex.Text.ToLower().Equals("women")) && IsDigitsOnly(Weight.Text) && IsDigitsOnly(Age.Text) && Name.Text != null)
             {
                 this.Hide();
-                MainWindow mainWindow = new MainWindow(Int32.Parse(Age.Text), double.Parse(Weight.Text), Sex.Text);
+                MainWindow mainWindow = new MainWindow(Int32.Parse(Age.Text), double.Parse(Weight.Text), Sex.Text, Name.Text);
                 mainWindow.Closed += (s, args) => this.Close();
                 mainWindow.Show();
                 
@@ -72,6 +77,9 @@ namespace Clientdisplay
             return true;
         }
 
-      
+        private void Name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

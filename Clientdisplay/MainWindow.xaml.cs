@@ -20,6 +20,9 @@ using System.Windows.Threading;
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
+using System.IO;
+using ServerApp;
+using Newtonsoft.Json.Linq;
 
 namespace Clientdisplay
 {
@@ -35,7 +38,11 @@ namespace Clientdisplay
         private int age;
         private double weight;
         private string sex;
+        private string name;
 
+        public List<double> BPM { get; set; } = new List<double>();
+        public List<double> Speed { get; set; } = new List<double>();
+        public List<double> RPM { get; set; } = new List<double>();
        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
         private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
 
@@ -43,13 +50,14 @@ namespace Clientdisplay
         private DispatcherTimer AstrandTimer = new DispatcherTimer();
         string currentTime = string.Empty;
 
-        public MainWindow(int age, double weight, string sex) 
+        public MainWindow(int age, double weight, string sex, string name) 
         {
             InitializeComponent();
 
             this.age = age;
             this.weight = weight;
             this.sex = sex;
+            this.name = name;
 
             AstrandTimer.Tick += new EventHandler(dt_Tick);
             AstrandTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
@@ -138,8 +146,9 @@ namespace Clientdisplay
                 {
                     case GeneralDataMessage generalMessage:
                         lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
+                        Speed.Add(bikeSession.GetSpeed());
                         lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
-                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.GetTimeSinceStart().ToString());
+                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.GetTimeSinceStart().ToString());                      
                         ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
                         ChartMetersTravelled.Add(new ObservableValue(bikeSession.GetMetersTravelled()));
                         break;
@@ -148,6 +157,7 @@ namespace Clientdisplay
                         break;
                     case HearthDataMessage hearthDataMessage:
                         lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
+                        RPM.Add(bikeSession.GetHearthBeats());
                         break;
                 }
             }));
@@ -273,6 +283,40 @@ namespace Clientdisplay
             currentTime = String.Format("{0:00}:{1:00}:{2:00}",
             ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
             timelbl.Content = $"Session Time: {currentTime}";
+        }
+
+        private void writeLog(MeasurementData md)
+        {
+            Writer writer = new Writer();
+            JObject o = (JObject)JToken.FromObject(md);
+            writer.writeData(o);
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
+        }
+    }
+
+    public class MeasurementData
+    {
+        public string name;
+        public string gender;
+        public int age;
+        public double weight;
+        public List<double> rpm = new List<double>();
+        public List<double> speed = new List<double>();
+        public List<double> bpm = new List<double>();
+        public MeasurementData(string name, string gender, int age, double weight, List<double> rpm, List<double> speed, List<double> bpm)
+        {
+            this.name = name;
+            this.gender = gender;
+            this.age = age;
+            this.weight = weight;
+            this.rpm = rpm;
+            this.speed = speed;
+            this.bpm = bpm;
         }
     }
 }
