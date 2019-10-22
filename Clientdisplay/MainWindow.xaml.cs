@@ -31,7 +31,7 @@ namespace Clientdisplay
     /// </summary>
     public partial class MainWindow : Window, IMessageObserver
     {
-       
+
         private BikeSession bikeSession;
         private bool simulationRunning;
         private StationaryBike stationaryBike;
@@ -107,7 +107,7 @@ namespace Clientdisplay
                 ts.Minutes, ts.Seconds);
                 timelbl.Content = $"Session Time: {currentTime} ";
 
-                
+
                 int elapsedTime = (int)AstrandWatch.Elapsed.TotalSeconds;
                 if (elapsedTime < 120)
                 {
@@ -141,7 +141,8 @@ namespace Clientdisplay
                 return;
 
             //Allow other threads to work on the UI thread.
-            Application.Current.Dispatcher.Invoke(new Action(() => {
+            Application.Current.Dispatcher.Invoke(new Action(() =>
+            {
                 switch (message)
                 {
                     case GeneralDataMessage generalMessage:
@@ -165,7 +166,8 @@ namespace Clientdisplay
 
         public void Log(string message)
         {
-            Application.Current.Dispatcher.Invoke(new Action(() => {
+            Application.Current.Dispatcher.Invoke(new Action(() =>
+            {
                 log.Content += message + "\n";
             }));
         }
@@ -265,11 +267,11 @@ namespace Clientdisplay
 
         private void Startbtn_Click(object sender, RoutedEventArgs e)
         {
-           
+
             AstrandWatch.Start();
             AstrandTimer.Start();
         }
-        
+
 
         private void Stopbtn_Click_1(object sender, RoutedEventArgs e)
         {
@@ -278,7 +280,7 @@ namespace Clientdisplay
                 AstrandWatch.Stop();
                 AstrandWatch.Reset();
             }
-            
+
             TimeSpan ts = AstrandWatch.Elapsed;
             currentTime = String.Format("{0:00}:{1:00}:{2:00}",
             ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
@@ -287,14 +289,55 @@ namespace Clientdisplay
 
         private double femaleVo2(int age, double workload, double heartRate)
         {
-            return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100);
+            return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100) * correction(age);
+        }
+
+        private double maleVo2(int age, double workload, double heartRate)
+        {
+            return ((0.00212 * workload + 0.299) / (0.769 * heartRate - 48.5) * 100) * correction(age);
         }
 
         private double correction(int age)
         {
-            if ()
+            if (age <= 15)
             {
-
+                return 1.1 + (15 - age) * 0.01;
+            }
+            else if (age <= 25)
+            {
+                return 1.0 + (25 - age) * 0.01;
+            }
+            else if (age <= 35)
+            {
+                return 0.87 + (35 - age) * (0.013);
+            }
+            else if (age <= 40)
+            {
+                return 0.83 + (40 - age) * 0.008;
+            }
+            else if (age <= 45)
+            {
+                return 0.78 + (45 - age) * 0.01;
+            }
+            else if (age <= 50)
+            {
+                return 0.75 + (50 - age) * 0.006;
+            }
+            else if (age <= 55)
+            {
+                return 0.71 + (55 - age) * 0.008;
+            }
+            else if (age <= 60)
+            {
+                return 0.68 + (60 - age) * 0.006;
+            }
+            else if (age <= 65)
+            {
+                return 0.65 + (65 - age) * 0.006;
+            }
+            else
+            {
+                return 0.65 - (age - 65) * 0.006;
             }
         }
 
