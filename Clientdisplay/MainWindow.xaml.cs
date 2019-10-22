@@ -32,6 +32,9 @@ namespace Clientdisplay
         private BikeSession bikeSession;
         private bool simulationRunning;
         private StationaryBike stationaryBike;
+        private int age;
+        private double weight;
+        private string sex;
 
        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
         private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
@@ -43,6 +46,11 @@ namespace Clientdisplay
         public MainWindow(int age, double weight, string sex) 
         {
             InitializeComponent();
+
+            this.age = age;
+            this.weight = weight;
+            this.sex = sex;
+
             AstrandTimer.Tick += new EventHandler(dt_Tick);
             AstrandTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             CurrentlyConnectedLabel.Content = "Not connected to a bike";
