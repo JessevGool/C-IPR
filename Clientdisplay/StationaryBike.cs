@@ -112,5 +112,20 @@ namespace Clientdisplay
 
             this.observer.ChangeValues(message);
         }
+
+        public async Task SendResistance(int intResistance)
+        {
+            byte resistance = (byte)intResistance;
+            byte crc = 0;
+            byte[] output = new byte[13];
+            output[0] = 0x4A; // Sync bit;
+            output[1] = 0x09; // Message Length
+            output[2] = 0x4E; // Message type
+            output[3] = 0x05; // Message type
+            output[4] = 0x30; // Data Type
+            output[11] = resistance;
+            output[12] = crc;
+            await this.currentConnectedBike.WriteCharacteristic("6e40fec3-b5a3-f393-e0a9-e50e24dcca9e", output);
+        }
     }
 }
