@@ -67,6 +67,7 @@ namespace Clientdisplay
             bycicleBox.Items.Add("00457");
             bycicleBox.Items.Add("24517");
             bycicleBox.Items.Add("00438");
+            bycicleBox.Items.Add("00472");
 
             //StationaryBike stationaryBike = new StationaryBike();
             bikeSession = new BikeSession();
