@@ -34,7 +34,11 @@ namespace Clientdisplay
         {
             if (!IsDigitsOnly(Age.Text))
             {
-                Age.Background = Brushes.Red;
+                if (Int32.Parse(Age.Text) < 0 || Int32.Parse(Age.Text) > 100)
+                {
+                    Age.Background = Brushes.Red;
+                }
+                
             }
             else
             {
@@ -56,6 +60,7 @@ namespace Clientdisplay
             {
                 Sex.Background = Brushes.White;
             }
+            if ((Sex.Text.ToLower().Equals("man") || Sex.Text.ToLower().Equals("women")) && IsDigitsOnly(Weight.Text) && IsDigitsOnly(Age.Text) && Int32.Parse(Age.Text) >= 0 && Int32.Parse(Age.Text) <= 100)
             if ((Sex.Text.ToLower().Equals("man") || Sex.Text.ToLower().Equals("women")) && IsDigitsOnly(Weight.Text) && IsDigitsOnly(Age.Text) && Name.Text != null)
             {
                 this.Hide();
