@@ -14,7 +14,7 @@
         <Label Name="lblDistance" Content="Afstand afgelegd: " Margin="10,46,549,336"></Label>
         <Label x:Name="lblRPM" Content="RPM:" Margin="10,88,549,292"></Label>
 
-        <ScrollViewer Margin="578,127,9.6,10">
+        <ScrollViewer Margin="578,119,10,207">
             <Label x:Name="log"  Content="Log: 
                        
                     " />
@@ -23,15 +23,21 @@
 
         <Label Name="lblHearthRate" Content="Hartslag: " Margin="10,132,549,245" />
         <ListBox Name="bycicleBox" HorizontalAlignment="Left" Height="100" Margin="577,14,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="BycicleBox_SelectionChanged" />
-        <Label Name="CurrentlyConnectedLabel"  Content="Label" HorizontalAlignment="Left" Margin="311,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.145" Width="267"/>
+        <Label Name="CurrentlyConnectedLabel"  Content="" HorizontalAlignment="Left" Margin="311,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.145" Width="267"/>
         <Label Name="lblVoltage" Content="Voltage: " HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="235"/>
         <Label x:Name="timelbl" Content="Session Time:" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="563" FontSize="20" Height="84"/>
         <Button x:Name="Stopbtn" Content="Stop test" HorizontalAlignment="Left" Margin="473,64,0,0" VerticalAlignment="Top" Width="100" Height="50" Click="Stopbtn_Click_1"/>
         <Button x:Name="Startbtn" Content="Start test" HorizontalAlignment="Left" Margin="473,10,0,0" VerticalAlignment="Top" Width="100" Height="50" Click="Startbtn_Click"/>
-        <Button x:Name="SendFilebtn" Content="Stuur naar server" HorizontalAlignment="Left" Margin="473,119,0,0" VerticalAlignment="Top" Width="100" Height="50"/>
+        <Button x:Name="SendFilebtn" Content="Stuur naar server" HorizontalAlignment="Left" Margin="473,119,0,0" VerticalAlignment="Top" Width="100" Height="50" Click="SendFilebtn_Click"/>
         <Label x:Name="Statuslbl" Content="Session Status:" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Width="563" Height="84" FontSize="20"/>
         <Grid Name="chartGrid" Height="155" VerticalAlignment="Bottom" Margin="181,0,324,250"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="38" Margin="473,174,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Label Name="ConnectionServerlbl" Content="" HorizontalAlignment="Left" Margin="0,383,0,0" VerticalAlignment="Top"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="93" Margin="578,230,0,0" VerticalAlignment="Top" Width="204">
+            <Label x:Name="incomingmessages"  Content=" 
+                       
+                    " />
+        </ScrollViewer>
 
     </Grid>
 </Window>

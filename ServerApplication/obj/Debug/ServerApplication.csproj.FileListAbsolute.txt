@@ -29,3 +29,19 @@ D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.csproj.Cor
 D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.csproj.CopyComplete
 D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.exe
 D:\Leerjaar 2\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.pdb
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe.config
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.exe
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\ServerApplication.pdb
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\BLELibrary.dll
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\LiveCharts.dll
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\LiveCharts.Wpf.dll
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\Newtonsoft.Json.dll
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\LiveCharts.pdb
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\LiveCharts.xml
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\LiveCharts.Wpf.pdb
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\LiveCharts.Wpf.xml
+E:\School\IPR\C-IPR\ServerApplication\bin\Debug\Newtonsoft.Json.xml
+E:\School\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.csprojAssemblyReference.cache
+E:\School\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.csproj.CopyComplete
+E:\School\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.exe
+E:\School\IPR\C-IPR\ServerApplication\obj\Debug\ServerApplication.pdb

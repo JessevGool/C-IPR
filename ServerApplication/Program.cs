@@ -108,8 +108,8 @@ namespace ServerApplication
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Request");
-                    response = _stringprefix + "Invalid Request";
+                    Console.WriteLine($"Client sent: {message}");
+                   
                 }
             }
             byte[] data = Encoding.ASCII.GetBytes(response);

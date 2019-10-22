@@ -22,8 +22,9 @@ using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 using System.IO;
 using ServerApp;
-using Newtonsoft.Json.Linq;
-
+using Newtonsoft.Json.Linq;using System.Net.Sockets;
+using System.Net;
+
 namespace Clientdisplay
 {
     /// <summary>
@@ -31,6 +32,9 @@ namespace Clientdisplay
     /// </summary>
     public partial class MainWindow : Window, IMessageObserver
     {
+
+        private  Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        private  string _prefix = "client##";
 
         private BikeSession bikeSession;
         private bool simulationRunning;
@@ -53,7 +57,9 @@ namespace Clientdisplay
         public MainWindow(int age, double weight, string sex, string name) 
         {
             InitializeComponent();
-
+            LoopConnect();
+           
+            SendFilebtn.IsEnabled = false;
             this.age = age;
             this.weight = weight;
             this.sex = sex;
@@ -97,9 +103,72 @@ namespace Clientdisplay
 
             };
             chartGrid.Children.Add(ch);
+           
+          
 
         }
-        void dt_Tick(object sender, EventArgs e)
+        private  void ReceiveMessage()
+        {
+
+            Thread receivemessages = new Thread(() =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        byte[] receivedBuffer = new byte[1024];
+                        int rec = _clientSocket.Receive(receivedBuffer);
+                        byte[] data = new byte[rec];
+                        
+                        Array.Copy(receivedBuffer, data, rec);
+                        string serverresponse = Encoding.ASCII.GetString(data);
+                        string[] prefixwithmessage = serverresponse.Split(new[] { "//" }, StringSplitOptions.None);
+                        if (prefixwithmessage[0] == "message")
+                        {
+                            incomingmessages.Content = $"Received: {prefixwithmessage[1]}";
+                        }
+                        else if (prefixwithmessage[1] == "file")
+                        {
+
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        incomingmessages.Content = e.Message;
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            });
+            receivemessages.Start();
+           
+        }
+        private void LoopConnect()
+        {
+            int attempts = 0;
+            while (!_clientSocket.Connected)
+            {
+
+
+                try
+                {
+                    attempts++;
+                    _clientSocket.Connect(IPAddress.Loopback, 100);
+                }
+                catch (SocketException e)
+                {
+                    ConnectionServerlbl.Content = $"Connection attempts: {attempts}";
+                   
+                }
+            }
+           
+            ConnectionServerlbl.Content = "Connected";
+            
+            string connected = "client##connected";
+            byte[] buffer = Encoding.ASCII.GetBytes(connected);
+            _clientSocket.Send(buffer);
+
+        }
+            void dt_Tick(object sender, EventArgs e)
         {
             if (AstrandWatch.IsRunning)
             {
@@ -122,9 +191,11 @@ namespace Clientdisplay
                 {
                     Statuslbl.Content = $"Cool down: {420 - elapsedTime}";
                 }
-                else if (elapsedTime > 420)
+                else if (elapsedTime == 420)
                 {
+                    SendFilebtn.IsEnabled = true;
                     Statuslbl.Content = "You can stop now";
+                    writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
                 }
             }
         }
@@ -150,7 +221,7 @@ namespace Clientdisplay
                         lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
                         Speed.Add(bikeSession.GetSpeed());
                         lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
-                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.GetTimeSinceStart().ToString());                      
+                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);                      
                         ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
                         ChartMetersTravelled.Add(new ObservableValue(bikeSession.GetMetersTravelled()));
                         break;
@@ -271,6 +342,7 @@ namespace Clientdisplay
 
             AstrandWatch.Start();
             AstrandTimer.Start();
+            SendFilebtn.IsEnabled = false;
         }
 
 
@@ -281,11 +353,14 @@ namespace Clientdisplay
                 AstrandWatch.Stop();
                 AstrandWatch.Reset();
             }
-
+            SendFilebtn.IsEnabled = true;
             TimeSpan ts = AstrandWatch.Elapsed;
             currentTime = String.Format("{0:00}:{1:00}:{2:00}",
             ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
             timelbl.Content = $"Session Time: {currentTime}";
+            int elapsedTime = (int)AstrandWatch.Elapsed.TotalSeconds;
+            Statuslbl.Content = $"Warming up: {120 - elapsedTime}";
+            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
         }
 
         private double femaleVo2(int age, double workload, double heartRate)
@@ -354,7 +429,16 @@ namespace Clientdisplay
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
-        }
+        }
+
+        private void SendFilebtn_Click(object sender, RoutedEventArgs e)
+        {
+            incomingmessages.Content = "JOe";
+            string realfilename = $"{getPath()}Data/Data.txt";
+            string filetext = "client##" + System.IO.File.ReadAllText(realfilename);
+            byte[] buffer = Encoding.ASCII.GetBytes(filetext);
+            _clientSocket.Send(buffer);
+        }
     }
 
     public class MeasurementData

@@ -15,7 +15,7 @@ namespace Clientdisplay
         private float metersTravelled;
         private int distanceAmountOfCycles;
         private int lastKnownDistance;
-
+        public double CycleRPM { get; set; }
         private double speed;
         private long hearthBeats;
 
@@ -23,6 +23,7 @@ namespace Clientdisplay
 
         public BikeSession()
         {
+            this.CycleRPM = 0;
             this.timeSinceStart = 0;
             this.timeAmountOfCycles = 0;
             this.lastKnownTime = 0;
