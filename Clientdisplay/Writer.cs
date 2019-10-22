@@ -1,6 +1,11 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
+using System.Text;
+using System.Threading;
 
 namespace ServerApp
 {
@@ -31,11 +36,6 @@ namespace ServerApp
         }
 
 
-        public static String getFile()
-        {
-            string fileName = @"\Data\Data.txt";
-            return getPath() + fileName;
-        }
         public static string getPath()
         {
             string startupPath = System.IO.Directory.GetCurrentDirectory();
@@ -43,6 +43,13 @@ namespace ServerApp
             string split = Startsplit.Replace(@"\", "/");
             return split;
         }
+
+        public static string getFile()
+        {
+            string fileName = @"\Data\Data.txt";
+            return getPath() + fileName;
+        }
+
 
     }
 }
