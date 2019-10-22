@@ -344,6 +344,7 @@ namespace Clientdisplay
         private void writeLog(MeasurementData md)
         {
             Writer writer = new Writer();
+            writer.clearFile();
             JObject o = (JObject)JToken.FromObject(md);
             writer.writeData(o);
             

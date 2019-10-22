@@ -34,9 +34,15 @@ namespace ServerApp
         public static String getFile()
         {
             string fileName = @"\Data\Data.txt";
-            return Environment.CurrentDirectory.Substring(0, 69) + fileName;
+            return getPath() + fileName;
         }
-
+        public static string getPath()
+        {
+            string startupPath = System.IO.Directory.GetCurrentDirectory();
+            string Startsplit = startupPath.Substring(0, startupPath.LastIndexOf("bin"));
+            string split = Startsplit.Replace(@"\", "/");
+            return split;
+        }
 
     }
 }
