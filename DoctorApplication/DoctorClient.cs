@@ -32,7 +32,7 @@ namespace DoctorApplication
                 byte[] buffer = Encoding.ASCII.GetBytes(req);
                 _clientSocket.Send(buffer);
 
-                byte[] receivedBuffer = new byte[1024];
+                byte[] receivedBuffer = new byte[1073741824];
                 int rec = _clientSocket.Receive(receivedBuffer);
                 byte[] data = new byte[rec];
                 Array.Copy(receivedBuffer, data, rec);

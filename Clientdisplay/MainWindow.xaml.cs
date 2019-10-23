@@ -57,8 +57,11 @@ namespace Clientdisplay
         public int spin;
         public int speedcycle;
         public List<double> Watt { get; set; } = new List<double>();
-        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
         private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
+        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
+       private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
+        private ChartValues<ObservableValue> ChartRPM { get; set; }
+        private ChartValues<ObservableValue> ChartBeat { get; set; }
 
         private Stopwatch AstrandWatch = new Stopwatch();
         private DispatcherTimer AstrandTimer = new DispatcherTimer();
@@ -98,7 +101,8 @@ namespace Clientdisplay
             CartesianChart ch = new CartesianChart();
 
             ChartSpeedValues = new ChartValues<ObservableValue>();
-            ChartMetersTravelled = new ChartValues<ObservableValue>();
+            ChartRPM = new ChartValues<ObservableValue>();
+            ChartBeat =new ChartValues<ObservableValue>();
 
             ch.Series = new SeriesCollection
             {
@@ -109,8 +113,13 @@ namespace Clientdisplay
                 },
                 new LineSeries
                 {
-                    Title = "Meters travelled",
-                    Values = ChartMetersTravelled
+                    Title = "RPM",
+                    Values = ChartRPM
+                },
+                new LineSeries
+                {
+                    Title = "Heartbeat",
+                    Values = ChartBeat
                 }
 
 
@@ -266,18 +275,32 @@ namespace Clientdisplay
                         RPM.Add(bikeSession.CycleRPM);
                         spin = (int)bikeSession.CycleRPM;
                         lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
-                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);
-                        ChartSpeedValues.Add(new ObservableValue(bikeSession.Speed));
-                        ChartMetersTravelled.Add(new ObservableValue(bikeSession.GetMetersTravelled()));
+                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);  
+                        
+                        ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
+                        ChartRPM.Add(new ObservableValue(bikeSession.CycleRPM));
+                    /*    if (ChartSpeedValues.Count == 30)
+                        {
+                            ChartSpeedValues.RemoveAt(0);
+                        }
+                        else if(ChartRPM.Count == 30)
+                        {
+                            ChartRPM.RemoveAt(0);
+                        }*/
                         break;
                     case StationaryDataMessage stationaryMessage:
                         lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.Voltage.ToString());
                         this.voltage = bikeSession.Voltage;
                         break;
                     case HearthDataMessage hearthDataMessage:
-                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.HearthBeats.ToString());
-                        BPM.Add(bikeSession.HearthBeats);
-                        HeartRate = bikeSession.HearthBeats;
+                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
+                        BPM.Add(bikeSession.GetHearthBeats());
+                        HeartRate = bikeSession.GetHearthBeats();
+                        ChartBeat.Add(new ObservableValue(bikeSession.GetHearthBeats()));
+                       /* if(ChartBeat.Count == 30)
+                        {
+                            ChartBeat.RemoveAt(0);
+                        }*/
                         break;
                 }
 

@@ -8,6 +8,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Threading;
+
 namespace ServerApplication
 {
     class Program
@@ -113,7 +116,27 @@ namespace ServerApplication
                     dynamic json = JsonConvert.DeserializeObject(message);
                     Console.WriteLine(json.timestart);
                     //Console.WriteLine($"Client sent: {message}");
-                   
+                    string filepath = getPath() + $"Logs/{(json.timestart as JToken).Value<string>().Replace("/", "-").Replace(":", @".")}.txt";
+                  
+                    if (!File.Exists(filepath))
+                    {
+                        File.Create(filepath).Close();
+                        
+                        Thread.Sleep(500);
+                        TextWriter tw = new StreamWriter(filepath);
+                        tw.WriteLine(message);
+                        tw.Close();
+                    }
+                    else if (File.Exists(filepath))
+                    {
+                        using (var tw = new StreamWriter(filepath, true)){
+                            tw.WriteLine(message);
+                            tw.Close();
+                        }
+                        
+                       
+                    }
+
                 }
             }
             byte[] data = Encoding.ASCII.GetBytes(response);

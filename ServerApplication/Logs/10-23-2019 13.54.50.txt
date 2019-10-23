@@ -1,0 +1,2200 @@
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:51",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:52",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:53",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:54",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:55",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:56",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:57",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:58",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:54:59",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:00",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:01",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:02",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:03",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:04",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:05",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:06",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:07",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:08",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:09",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:10",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:11",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:12",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:13",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:14",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:15",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:16",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:17",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:18",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:19",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:20",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:21",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:22",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:23",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:24",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:25",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:26",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:27",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:28",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:29",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:30",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:31",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:32",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:33",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:34",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:35",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:36",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:37",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:38",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:39",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:41",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:42",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:43",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:44",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:45",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:46",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:47",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:48",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:49",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:50",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:51",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:52",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:53",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:54",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:55",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:56",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:57",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:58",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:55:59",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:00",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:01",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:02",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:03",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:04",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:05",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:06",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:07",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:08",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:09",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:10",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:11",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:13",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:14",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:15",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:16",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:17",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:18",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:19",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:20",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:21",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:22",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:23",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:24",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:25",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:26",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:27",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:28",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:30",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:31",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:32",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:33",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:35",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:36",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:37",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:39",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:40",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:41",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:42",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:43",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:44",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:45",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:47",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:48",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:49",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:50",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:51",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:52",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:53",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:54",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:55",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:56",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:58",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:56:59",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:00",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:01",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:02",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:03",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:04",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:05",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:06",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:08",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:09",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:10",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:11",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:12",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:13",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:15",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:16",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:17",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:18",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:19",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:21",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:22",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:23",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:24",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:25",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:26",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:27",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:28",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:29",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:30",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:31",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:32",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:33",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:34",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:36",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:37",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:38",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:40",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:41",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:42",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:43",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:44",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:45",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:47",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:48",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:49",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:50",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:52",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:53",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:54",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:55",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:57:57",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:00",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:01",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:03",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:04",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:05",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:07",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:08",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:10",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:11",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:13",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:14",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:16",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:17",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:19",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:20",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:22",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:24",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:25",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:27",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:29",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:30",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:32",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:34",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:36",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:37",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:39",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:41",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
+{
+  "timestart": "10/23/2019 13:54:50",
+  "time": "23/10/2019 13:58:43",
+  "name": "jesse",
+  "gender": "man",
+  "age": 24,
+  "weight": 42.0,
+  "rpm": 0,
+  "speed": 0,
+  "bpm": 0
+}
