@@ -36,8 +36,8 @@ namespace Clientdisplay
     public partial class MainWindow : Window, IMessageObserver
     {
 
-        private  Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        private  string _prefix = "client##";
+        private Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        private string _prefix = "client##";
 
         private BikeSession bikeSession;
         private bool simulationRunning;
@@ -46,6 +46,7 @@ namespace Clientdisplay
         private double weight;
         private string sex;
         private string name;
+        private double voltage;
         public string time;
 
         public List<double> BPM { get; set; } = new List<double>();
@@ -56,7 +57,7 @@ namespace Clientdisplay
         public int spin;
         public int speedcycle;
         public List<double> Watt { get; set; } = new List<double>();
-       private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
+        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
         private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
 
         private Stopwatch AstrandWatch = new Stopwatch();
@@ -65,11 +66,11 @@ namespace Clientdisplay
         string currentTime = string.Empty;
         string timestart;
 
-        public MainWindow(int age, double weight, string sex, string name) 
+        public MainWindow(int age, double weight, string sex, string name)
         {
             InitializeComponent();
             LoopConnect();
-           
+
             SendFilebtn.IsEnabled = false;
             this.age = age;
             this.weight = weight;
@@ -117,11 +118,11 @@ namespace Clientdisplay
 
             };
             chartGrid.Children.Add(ch);
-           
-          
+
+
 
         }
-        private  void ReceiveMessage()
+        private void ReceiveMessage()
         {
 
             Thread receivemessages = new Thread(() =>
@@ -133,7 +134,7 @@ namespace Clientdisplay
                         byte[] receivedBuffer = new byte[1024];
                         int rec = _clientSocket.Receive(receivedBuffer);
                         byte[] data = new byte[rec];
-                        
+
                         Array.Copy(receivedBuffer, data, rec);
                         string serverresponse = Encoding.ASCII.GetString(data);
                         string[] prefixwithmessage = serverresponse.Split(new[] { "//" }, StringSplitOptions.None);
@@ -154,7 +155,7 @@ namespace Clientdisplay
                 }
             });
             receivemessages.Start();
-           
+
         }
         private void LoopConnect()
         {
@@ -171,12 +172,12 @@ namespace Clientdisplay
                 catch (SocketException e)
                 {
                     ConnectionServerlbl.Content = $"Connection attempts: {attempts}";
-                   
+
                 }
             }
-           
+
             ConnectionServerlbl.Content = "Connected";
-            
+
             string connected = "client##connected";
             byte[] buffer = Encoding.ASCII.GetBytes(connected);
             _clientSocket.Send(buffer);
@@ -185,10 +186,10 @@ namespace Clientdisplay
         void dt_tick2(object sender, EventArgs e)
         {
             string time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            byte[] buffer = Encoding.ASCII.GetBytes("client##" + new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate).DataTostring());
+            byte[] buffer = Encoding.ASCII.GetBytes("client##" + new MeasurementData(timestart, time, this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate, this.voltage).DataTostring());
             _clientSocket.Send(buffer);
         }
-            void dt_Tick(object sender, EventArgs e)
+        void dt_Tick(object sender, EventArgs e)
         {
             if (AstrandWatch.IsRunning)
             {
@@ -205,19 +206,39 @@ namespace Clientdisplay
                 }
                 else if (elapsedTime > 120 && elapsedTime < 360)
                 {
-                    Statuslbl.Content = $"Astrand Test: {360 - elapsedTime}";
+                    if (this.spin < 50)
+                    {
+                        Statuslbl.Content = $"You have to go Faster!!";
+                    }
+                    else if (this.spin > 60)
+                    {
+                        Statuslbl.Content = $"Slowdown!!";
+                    }
+                    else
+                    {
+                        Statuslbl.Content = $"Your doing great!";
+                    }
                 }
                 else if (elapsedTime > 360 && elapsedTime < 420)
                 {
+                    MeasurementData data = new MeasurementData(timestart, time, this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate, this.voltage);
+                    if (this.sex.Equals("man"))
+                    {
+                        Statuslbl.Content = "Your vo2 score is: " + data.maleVo2();
+                    }
+                    else if (this.sex.Equals("women"))
+                    {
+                        Statuslbl.Content = "Your vo2 score is: " + data.femaleVo2();
+                    }
+
+                    SendFilebtn.IsEnabled = true;
+                    writeLog(new MeasurementData(timestart, time, this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate, this.voltage));
                     Statuslbl.Content = $"Cool down: {420 - elapsedTime}";
                 }
-                else if (elapsedTime == 420)
+                else
                 {
-                    SendFilebtn.IsEnabled = true;
                     Statuslbl.Content = "You can stop now";
-                    writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
                 }
-               
             }
         }
         public static string getPath()
@@ -239,35 +260,33 @@ namespace Clientdisplay
                 switch (message)
                 {
                     case GeneralDataMessage generalMessage:
-                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
-                        Speed.Add(bikeSession.GetSpeed());
-                        speedcycle = (int)bikeSession.GetSpeed();
+                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.Speed.ToString());
+                        Speed.Add(bikeSession.Speed);
+                        speedcycle = (int)bikeSession.Speed;
                         RPM.Add(bikeSession.CycleRPM);
                         spin = (int)bikeSession.CycleRPM;
                         lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
-                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);                      
-                        ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
+                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);
+                        ChartSpeedValues.Add(new ObservableValue(bikeSession.Speed));
                         ChartMetersTravelled.Add(new ObservableValue(bikeSession.GetMetersTravelled()));
                         break;
                     case StationaryDataMessage stationaryMessage:
                         lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.Voltage.ToString());
+                        this.voltage = bikeSession.Voltage;
                         break;
                     case HearthDataMessage hearthDataMessage:
-                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
-                        BPM.Add(bikeSession.GetHearthBeats());
-                        HeartRate = bikeSession.GetHearthBeats();
+                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.HearthBeats.ToString());
+                        BPM.Add(bikeSession.HearthBeats);
+                        HeartRate = bikeSession.HearthBeats;
                         break;
                 }
-               
+
             }));
         }
 
         public void Log(string message)
         {
             Application.Current.Dispatcher.Invoke(new Action(() =>
-            {
-                log.Content += message + "\n";
-            }));
             {
                 log.Content += message + "\n";
             }));
@@ -392,20 +411,116 @@ namespace Clientdisplay
             timelbl.Content = $"Session Time: {currentTime}";
             int elapsedTime = (int)AstrandWatch.Elapsed.TotalSeconds;
             Statuslbl.Content = $"Warming up: {120 - elapsedTime}";
-            writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
+            writeLog(new MeasurementData(timestart, time, this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate, this.voltage));
         }
 
-        private double femaleVo2(int age, double workload, double heartRate)
+        private void writeLog(MeasurementData md)
+
         {
-            return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100) * correction(age);
-        }
-        {
-            return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100) * correction(age);
+
+            Writer writer = new Writer();
+
+            writer.clearFile();
+
+            JObject o = (JObject)JToken.FromObject(md);
+
+            writer.writeData(o);
+
+
+
         }
 
-        private double maleVo2(int age, double workload, double heartRate)
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+
         {
-            return ((0.00212 * workload + 0.299) / (0.769 * heartRate - 48.5) * 100) * correction(age);
+
+            writeLog(new MeasurementData(timestart, time, this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate, this.voltage));
+
+        }
+
+        private void SendFilebtn_Click(object sender, RoutedEventArgs e)
+        {
+            incomingmessages.Content = "JOe";
+            string realfilename = $"{getPath()}Data/Data.txt";
+            string filetext = "client##" + System.IO.File.ReadAllText(realfilename);
+            byte[] buffer = Encoding.ASCII.GetBytes(filetext);
+            _clientSocket.Send(buffer);
+        }
+    }
+
+    public class MeasurementData
+
+    {
+        public string timestart;
+        public string time;
+        public string name;
+        public List<double> Voltages;
+
+        public string gender;
+
+        public int age;
+
+        public double weight;
+
+        public int rpm;
+
+        public int speed;
+
+        public long bpm;
+
+        public double vo2;
+
+        public MeasurementData(string timestart, string time, string name, string gender, int age, double weight, int rpm, int speed, long bpm, double voltage)
+        {
+            this.timestart = timestart;
+            this.time = time;
+            this.name = name;
+            this.vo2 = -1;
+            this.gender = gender;
+
+            this.age = age;
+
+            this.weight = weight;
+
+            this.rpm = rpm;
+
+            this.speed = speed;
+
+            this.bpm = bpm;
+            Voltages.Add(voltage);
+
+        }
+
+        public JObject DataTostring()
+        {
+            JObject o = (JObject)JToken.FromObject(this);
+            return o;
+        }
+
+        public double femaleVo2()
+        {
+            double workload = 0;
+            foreach (double voltage in Voltages)
+            {
+                workload += voltage;
+            }
+            workload = workload / Voltages.Count();
+            workload = workload * 6.12;
+            return ((0.00193 * workload + 0.326) / (0.769 * this.bpm - 56.1) * 100) * correction(this.age);
+        }
+
+        public double maleVo2()
+        {
+            double workload = 0;
+            foreach (double voltage in Voltages)
+            {
+                workload += voltage;
+            }
+            workload = workload / Voltages.Count();
+            workload = workload * 6.12;
+            return ((0.00212 * workload + 0.299) / (0.769 * this.bpm - 48.5) * 100) * correction(this.age);
         }
 
         private double correction(int age)
@@ -450,88 +565,6 @@ namespace Clientdisplay
             {
                 return 0.65 - (age - 65) * 0.006;
             }
-        }
-
-        private void writeLog(MeasurementData md)
-
-        {
-
-            Writer writer = new Writer();
-
-            writer.clearFile();
-
-            JObject o = (JObject)JToken.FromObject(md);
-
-            writer.writeData(o);
-
-            
-
-        }
-
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-
-        {
-
-            writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
-
-        }
-
-        private void SendFilebtn_Click(object sender, RoutedEventArgs e)
-        {
-            incomingmessages.Content = "JOe";
-            string realfilename = $"{getPath()}Data/Data.txt";
-            string filetext = "client##" + System.IO.File.ReadAllText(realfilename);
-            byte[] buffer = Encoding.ASCII.GetBytes(filetext);
-            _clientSocket.Send(buffer);
-        }
-    }
-
-    public class MeasurementData
-
-    {
-        public string timestart;
-        public string time;
-        public string name;
-
-        public string gender;
-
-        public int age;
-
-        public double weight;
-        
-        public int rpm;
-
-        public int speed;
-
-        public long bpm;
-
-        public MeasurementData(string timestart,string time,string name, string gender, int age, double weight, int rpm, int speed, long bpm)
-
-        {
-            this.timestart = timestart;
-            this.time = time;
-            this.name = name;
-
-            this.gender = gender;
-
-            this.age = age;
-
-            this.weight = weight;
-
-            this.rpm = rpm;
-
-            this.speed = speed;
-
-            this.bpm = bpm;
-
-        }
-
-        public JObject DataTostring()
-        {
-            JObject o = (JObject)JToken.FromObject(this);
-            return o;
         }
 
     }
