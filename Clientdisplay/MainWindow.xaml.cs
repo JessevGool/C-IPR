@@ -47,6 +47,7 @@ namespace Clientdisplay
         public List<double> BPM { get; set; } = new List<double>();
         public List<double> Speed { get; set; } = new List<double>();
         public List<double> RPM { get; set; } = new List<double>();
+        public List<double> Watt { get; set } = new List<double>();
        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
         private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
 
