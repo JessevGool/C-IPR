@@ -1,4 +1,4 @@
-﻿using ServerApp;
+using ServerApp;
 using System;
 using System.Collections.Generic;
 using System.IO;
