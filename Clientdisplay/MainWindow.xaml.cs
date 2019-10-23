@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Clientdisplay.Incoming_messages;
 using System;
 using System.Collections.Generic;
@@ -219,31 +219,27 @@ namespace Clientdisplay
             //Allow other threads to work on the UI thread.
             Application.Current.Dispatcher.Invoke(new Action(() =>
             {
-                switch (message)
-                {
-                    case GeneralDataMessage generalMessage:
-                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
-                        Speed.Add(bikeSession.GetSpeed());
-                        RPM.Add(bikeSession.CycleRPM);
-                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
-                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);                      
-                        ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
-                        ChartMetersTravelled.Add(new ObservableValue(bikeSession.GetMetersTravelled()));
+                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.Speed.ToString());
+                        Speed.Add(bikeSession.Speed);
+                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.MetersTravelled.ToString());
+                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);
+                        ChartSpeedValues.Add(new ObservableValue(bikeSession.Speed));
+                        ChartMetersTravelled.Add(new ObservableValue(bikeSession.MetersTravelled));
                         break;
                     case StationaryDataMessage stationaryMessage:
-                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.GetVoltage().ToString());
+                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.Voltage.ToString());
                         break;
                     case HearthDataMessage hearthDataMessage:
-                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
-                        BPM.Add(bikeSession.GetHearthBeats());
+                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.HearthBeats.ToString());
+                        RPM.Add(bikeSession.HearthBeats);
                         break;
                 }
-            }));
-        }
-
         public void Log(string message)
         {
             Application.Current.Dispatcher.Invoke(new Action(() =>
+            {
+                log.Content += message + "\n";
+            }));
             {
                 log.Content += message + "\n";
             }));
@@ -362,13 +358,13 @@ namespace Clientdisplay
             TimeSpan ts = AstrandWatch.Elapsed;
             currentTime = String.Format("{0:00}:{1:00}:{2:00}",
             ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-            timelbl.Content = $"Session Time: {currentTime}";
-            int elapsedTime = (int)AstrandWatch.Elapsed.TotalSeconds;
-            Statuslbl.Content = $"Warming up: {120 - elapsedTime}";
-            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
+            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM, this.steadystate));
         }
 
         private double femaleVo2(int age, double workload, double heartRate)
+        {
+            return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100) * correction(age);
+        }
         {
             return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100) * correction(age);
         }
