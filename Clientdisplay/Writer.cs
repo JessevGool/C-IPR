@@ -16,9 +16,9 @@ namespace ServerApp
         {
             String file = getFileContent();
 
-            JArray rfile = JArray.Parse(Encrypter.DecryptString(file, "kip"));
+            JArray rfile = JArray.Parse(file);
             rfile.Add(jObject);
-            System.IO.File.WriteAllText(getFile(), Encrypter.EncryptString(rfile.ToString(), "kip"));
+            System.IO.File.WriteAllText(getFile(), rfile.ToString());
         }
 
         public static string getFileContent()
@@ -32,7 +32,7 @@ namespace ServerApp
 
         public void clearFile()
         {
-            System.IO.File.WriteAllText(getFile(), Encrypter.EncryptString("[]", "kip"));
+            System.IO.File.WriteAllText(getFile(), "[]");
         }
 
 

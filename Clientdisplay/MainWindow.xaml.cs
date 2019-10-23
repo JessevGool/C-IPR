@@ -46,17 +46,24 @@ namespace Clientdisplay
         private double weight;
         private string sex;
         private string name;
+        public string time;
 
         public List<double> BPM { get; set; } = new List<double>();
         public List<double> Speed { get; set; } = new List<double>();
         public List<double> RPM { get; set; } = new List<double>();
+
+        public long HeartRate;
+        public int spin;
+        public int speedcycle;
         public List<double> Watt { get; set; } = new List<double>();
        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
         private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
 
         private Stopwatch AstrandWatch = new Stopwatch();
         private DispatcherTimer AstrandTimer = new DispatcherTimer();
+        private DispatcherTimer DataTimer = new DispatcherTimer();
         string currentTime = string.Empty;
+        string timestart;
 
         public MainWindow(int age, double weight, string sex, string name) 
         {
@@ -68,11 +75,14 @@ namespace Clientdisplay
             this.weight = weight;
             this.sex = sex;
             this.name = name;
-
+            this.HeartRate = 0;
+            this.spin = 0;
             AstrandTimer.Tick += new EventHandler(dt_Tick);
+            DataTimer.Tick += new EventHandler(dt_tick2);
             AstrandTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            DataTimer.Interval = new TimeSpan(0, 0, 1);
             CurrentlyConnectedLabel.Content = "Not connected to a bike";
-
+            string time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             bycicleBox.Items.Add("01140");
             bycicleBox.Items.Add("00457");
             bycicleBox.Items.Add("24517");
@@ -172,6 +182,12 @@ namespace Clientdisplay
             _clientSocket.Send(buffer);
 
         }
+        void dt_tick2(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            byte[] buffer = Encoding.ASCII.GetBytes("client##" + new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate).DataTostring());
+            _clientSocket.Send(buffer);
+        }
             void dt_Tick(object sender, EventArgs e)
         {
             if (AstrandWatch.IsRunning)
@@ -199,8 +215,9 @@ namespace Clientdisplay
                 {
                     SendFilebtn.IsEnabled = true;
                     Statuslbl.Content = "You can stop now";
-                    writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
+                    writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
                 }
+               
             }
         }
         public static string getPath()
@@ -219,21 +236,32 @@ namespace Clientdisplay
             //Allow other threads to work on the UI thread.
             Application.Current.Dispatcher.Invoke(new Action(() =>
             {
-                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.Speed.ToString());
-                        Speed.Add(bikeSession.Speed);
-                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.MetersTravelled.ToString());
-                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);
-                        ChartSpeedValues.Add(new ObservableValue(bikeSession.Speed));
-                        ChartMetersTravelled.Add(new ObservableValue(bikeSession.MetersTravelled));
+                switch (message)
+                {
+                    case GeneralDataMessage generalMessage:
+                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
+                        Speed.Add(bikeSession.GetSpeed());
+                        speedcycle = (int)bikeSession.GetSpeed();
+                        RPM.Add(bikeSession.CycleRPM);
+                        spin = (int)bikeSession.CycleRPM;
+                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
+                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);                      
+                        ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
+                        ChartMetersTravelled.Add(new ObservableValue(bikeSession.GetMetersTravelled()));
                         break;
                     case StationaryDataMessage stationaryMessage:
                         lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.Voltage.ToString());
                         break;
                     case HearthDataMessage hearthDataMessage:
-                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.HearthBeats.ToString());
-                        RPM.Add(bikeSession.HearthBeats);
+                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
+                        BPM.Add(bikeSession.GetHearthBeats());
+                        HeartRate = bikeSession.GetHearthBeats();
                         break;
                 }
+               
+            }));
+        }
+
         public void Log(string message)
         {
             Application.Current.Dispatcher.Invoke(new Action(() =>
@@ -343,6 +371,8 @@ namespace Clientdisplay
 
             AstrandWatch.Start();
             AstrandTimer.Start();
+            DataTimer.Start();
+            timestart = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
             SendFilebtn.IsEnabled = false;
         }
 
@@ -354,11 +384,15 @@ namespace Clientdisplay
                 AstrandWatch.Stop();
                 AstrandWatch.Reset();
             }
+            DataTimer.Stop();
             SendFilebtn.IsEnabled = true;
             TimeSpan ts = AstrandWatch.Elapsed;
             currentTime = String.Format("{0:00}:{1:00}:{2:00}",
             ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM, this.steadystate));
+            timelbl.Content = $"Session Time: {currentTime}";
+            int elapsedTime = (int)AstrandWatch.Elapsed.TotalSeconds;
+            Statuslbl.Content = $"Warming up: {120 - elapsedTime}";
+            writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
         }
 
         private double femaleVo2(int age, double workload, double heartRate)
@@ -440,7 +474,7 @@ namespace Clientdisplay
 
         {
 
-            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
+            writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
 
         }
 
@@ -457,7 +491,8 @@ namespace Clientdisplay
     public class MeasurementData
 
     {
-
+        public string timestart;
+        public string time;
         public string name;
 
         public string gender;
@@ -465,17 +500,18 @@ namespace Clientdisplay
         public int age;
 
         public double weight;
+        
+        public int rpm;
 
-        public List<double> rpm = new List<double>();
+        public int speed;
 
-        public List<double> speed = new List<double>();
+        public long bpm;
 
-        public List<double> bpm = new List<double>();
-
-        public MeasurementData(string name, string gender, int age, double weight, List<double> rpm, List<double> speed, List<double> bpm)
+        public MeasurementData(string timestart,string time,string name, string gender, int age, double weight, int rpm, int speed, long bpm)
 
         {
-
+            this.timestart = timestart;
+            this.time = time;
             this.name = name;
 
             this.gender = gender;
@@ -490,6 +526,12 @@ namespace Clientdisplay
 
             this.bpm = bpm;
 
+        }
+
+        public JObject DataTostring()
+        {
+            JObject o = (JObject)JToken.FromObject(this);
+            return o;
         }
 
     }
