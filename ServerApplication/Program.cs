@@ -49,7 +49,7 @@ namespace ServerApplication
             byte[] dataBuffer = new byte[received];
             Array.Copy(_buffer, dataBuffer, received);
             string text = Encoding.ASCII.GetString(dataBuffer);
-            string[] idandtext = text.Split(new[] { "##" },StringSplitOptions.None);
+            string[] idandtext = text.Split(new string[1] { "##" },StringSplitOptions.None);
             string Id = idandtext[0];
             string message = idandtext[1];
             Console.WriteLine($"Received text: {message} from: {Id}");
@@ -109,8 +109,8 @@ namespace ServerApplication
                 }
                 else
                 {
-                    string decrptedmessage = Encrypter.DecryptString(message,"kip");
-                    Console.WriteLine($"Client sent: {decrptedmessage}");
+                   
+                    Console.WriteLine($"Client sent: {message}");
                    
                 }
             }
