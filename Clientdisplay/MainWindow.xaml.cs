@@ -20,9 +20,12 @@ using System.Windows.Threading;
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
-using System.IO;
-using ServerApp;
-using Newtonsoft.Json.Linq;using System.Net.Sockets;
+using System.IO;
+
+using ServerApp;
+
+using Newtonsoft.Json.Linq;
+using System.Net.Sockets;
 using System.Net;
 
 namespace Clientdisplay
@@ -47,6 +50,7 @@ namespace Clientdisplay
         public List<double> BPM { get; set; } = new List<double>();
         public List<double> Speed { get; set; } = new List<double>();
         public List<double> RPM { get; set; } = new List<double>();
+        public List<double> Watt { get; set; } = new List<double>();
        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
         private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
 
@@ -220,6 +224,7 @@ namespace Clientdisplay
                     case GeneralDataMessage generalMessage:
                         lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
                         Speed.Add(bikeSession.GetSpeed());
+                        RPM.Add(bikeSession.CycleRPM);
                         lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
                         lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);                      
                         ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
@@ -230,7 +235,7 @@ namespace Clientdisplay
                         break;
                     case HearthDataMessage hearthDataMessage:
                         lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
-                        RPM.Add(bikeSession.GetHearthBeats());
+                        BPM.Add(bikeSession.GetHearthBeats());
                         break;
                 }
             }));
@@ -417,18 +422,30 @@ namespace Clientdisplay
             }
         }
 
-        private void writeLog(MeasurementData md)
-        {
-            Writer writer = new Writer();
-            writer.clearFile();
-            JObject o = (JObject)JToken.FromObject(md);
-            writer.writeData(o);
-            
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
+        private void writeLog(MeasurementData md)
+
+        {
+
+            Writer writer = new Writer();
+
+            writer.clearFile();
+
+            JObject o = (JObject)JToken.FromObject(md);
+
+            writer.writeData(o);
+
+            
+
+        }
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+
+        {
+
+            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
+
         }
 
         private void SendFilebtn_Click(object sender, RoutedEventArgs e)
@@ -441,24 +458,43 @@ namespace Clientdisplay
         }
     }
 
-    public class MeasurementData
-    {
-        public string name;
-        public string gender;
-        public int age;
-        public double weight;
-        public List<double> rpm = new List<double>();
-        public List<double> speed = new List<double>();
-        public List<double> bpm = new List<double>();
-        public MeasurementData(string name, string gender, int age, double weight, List<double> rpm, List<double> speed, List<double> bpm)
-        {
-            this.name = name;
-            this.gender = gender;
-            this.age = age;
-            this.weight = weight;
-            this.rpm = rpm;
-            this.speed = speed;
-            this.bpm = bpm;
-        }
+    public class MeasurementData
+
+    {
+
+        public string name;
+
+        public string gender;
+
+        public int age;
+
+        public double weight;
+
+        public List<double> rpm = new List<double>();
+
+        public List<double> speed = new List<double>();
+
+        public List<double> bpm = new List<double>();
+
+        public MeasurementData(string name, string gender, int age, double weight, List<double> rpm, List<double> speed, List<double> bpm)
+
+        {
+
+            this.name = name;
+
+            this.gender = gender;
+
+            this.age = age;
+
+            this.weight = weight;
+
+            this.rpm = rpm;
+
+            this.speed = speed;
+
+            this.bpm = bpm;
+
+        }
+
     }
 }
