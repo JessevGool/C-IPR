@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
 namespace ServerApplication
 {
     class Program
@@ -109,8 +109,10 @@ namespace ServerApplication
                 }
                 else
                 {
-                   
-                    Console.WriteLine($"Client sent: {message}");
+                  
+                    dynamic json = JsonConvert.DeserializeObject(message);
+                    Console.WriteLine(json.timestart);
+                    //Console.WriteLine($"Client sent: {message}");
                    
                 }
             }

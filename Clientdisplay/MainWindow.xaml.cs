@@ -63,6 +63,7 @@ namespace Clientdisplay
         private DispatcherTimer AstrandTimer = new DispatcherTimer();
         private DispatcherTimer DataTimer = new DispatcherTimer();
         string currentTime = string.Empty;
+        string timestart;
 
         public MainWindow(int age, double weight, string sex, string name) 
         {
@@ -184,7 +185,7 @@ namespace Clientdisplay
         void dt_tick2(object sender, EventArgs e)
         {
             string time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            byte[] buffer = Encoding.ASCII.GetBytes("client##" + new MeasurementData(time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate).DataTostring());
+            byte[] buffer = Encoding.ASCII.GetBytes("client##" + new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate).DataTostring());
             _clientSocket.Send(buffer);
         }
             void dt_Tick(object sender, EventArgs e)
@@ -214,7 +215,7 @@ namespace Clientdisplay
                 {
                     SendFilebtn.IsEnabled = true;
                     Statuslbl.Content = "You can stop now";
-                    writeLog(new MeasurementData(time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
+                    writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
                 }
                
             }
@@ -368,6 +369,7 @@ namespace Clientdisplay
             AstrandWatch.Start();
             AstrandTimer.Start();
             DataTimer.Start();
+            timestart = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
             SendFilebtn.IsEnabled = false;
         }
 
@@ -387,7 +389,7 @@ namespace Clientdisplay
             timelbl.Content = $"Session Time: {currentTime}";
             int elapsedTime = (int)AstrandWatch.Elapsed.TotalSeconds;
             Statuslbl.Content = $"Warming up: {120 - elapsedTime}";
-            writeLog(new MeasurementData(time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
+            writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
         }
 
         private double femaleVo2(int age, double workload, double heartRate)
@@ -466,7 +468,7 @@ namespace Clientdisplay
 
         {
 
-            writeLog(new MeasurementData(time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
+            writeLog(new MeasurementData(timestart,time,this.name, this.sex, this.age, this.weight, this.spin, this.speedcycle, this.HeartRate));
 
         }
 
@@ -483,6 +485,7 @@ namespace Clientdisplay
     public class MeasurementData
 
     {
+        public string timestart;
         public string time;
         public string name;
 
@@ -491,16 +494,17 @@ namespace Clientdisplay
         public int age;
 
         public double weight;
-
+        
         public int rpm;
 
         public int speed;
 
         public long bpm;
 
-        public MeasurementData(string time,string name, string gender, int age, double weight, int rpm, int speed, long bpm)
+        public MeasurementData(string timestart,string time,string name, string gender, int age, double weight, int rpm, int speed, long bpm)
 
         {
+            this.timestart = timestart;
             this.time = time;
             this.name = name;
 
