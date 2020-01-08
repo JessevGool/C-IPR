@@ -1,5 +1,4 @@
-﻿using ServerApp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -109,9 +108,8 @@ namespace ServerApplication
                 }
                 else
                 {
-                    string decrptedmessage = Encrypter.DecryptString(message,"kip");
-                    Console.WriteLine($"Client sent: {decrptedmessage}");
-                   
+                    Console.WriteLine("Invalid Request");
+                    response = _stringprefix + "Invalid Request";
                 }
             }
             byte[] data = Encoding.ASCII.GetBytes(response);

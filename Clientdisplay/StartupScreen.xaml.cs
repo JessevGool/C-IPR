@@ -23,32 +23,25 @@ namespace Clientdisplay
         public StartupScreen()
         {
             InitializeComponent();
-            List<string> genders = new List<string>();
-            genders.Add("man");
-            genders.Add("women");
-            Sex.ItemsSource = genders;
-
+            Sex.Items.Add("Man");
+            Sex.Items.Add("Woman");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             if (!IsDigitsOnly(Age.Text))
             {
-                Age.Background = Brushes.Red;
+                if (Int32.Parse(Age.Text) < 0 || Int32.Parse(Age.Text) > 100 || Age.Text == "")
+                {
+                    Age.Background = Brushes.Red;
+                }   
             }
             else
             {
                 Age.Background = Brushes.White;
             }
-            if (Int32.Parse(Age.Text) < 0 || Int32.Parse(Age.Text) > 100)
-            {
-                Age.Background = Brushes.Red;
-            }
-            else
-            {
-                Age.Background = Brushes.White;
-            }
-            if (!IsDigitsOnly(Weight.Text))
+            if (!IsDigitsOnly(Weight.Text) || Weight.Text == "")
             {
                 Weight.Background = Brushes.Red;
             }
@@ -56,23 +49,17 @@ namespace Clientdisplay
             {
                 Weight.Background = Brushes.White;
             }
-            if (!(Sex.Text.ToLower().Equals("man") || Sex.Text.ToLower().Equals("women")))
-            {
-                Sex.Background = Brushes.Red;
-            }
-            else
-            {
-                Sex.Background = Brushes.White;
-            }
-            if ((Sex.Text.ToLower().Equals("man") || Sex.Text.ToLower().Equals("women")) && IsDigitsOnly(Weight.Text) && IsDigitsOnly(Age.Text) && Int32.Parse(Age.Text) >= 0 && Int32.Parse(Age.Text) <= 100)
-                if ((Sex.Text.ToLower().Equals("man") || Sex.Text.ToLower().Equals("women")) && IsDigitsOnly(Weight.Text) && IsDigitsOnly(Age.Text) && Name.Text != null)
+            if (Age.Text != "" && Weight.Text != "" && Sex.Text != "" && Name.Text != "") {
+                if (IsDigitsOnly(Weight.Text) && IsDigitsOnly(Age.Text) && Int32.Parse(Age.Text) >= 0 && Int32.Parse(Age.Text) <= 100)
                 {
                     this.Hide();
-                    MainWindow mainWindow = new MainWindow(Int32.Parse(Age.Text), double.Parse(Weight.Text), Sex.Text, Name.Text);
+                    MainWindow mainWindow = new MainWindow(Name.Text, Int32.Parse(Age.Text), double.Parse(Weight.Text), Sex.Text);
                     mainWindow.Closed += (s, args) => this.Close();
                     mainWindow.Show();
 
                 }
+            }
+            
         }
 
         static bool IsDigitsOnly(string str)
@@ -84,11 +71,8 @@ namespace Clientdisplay
             }
 
             return true;
-        }
-
-        private void Name_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        }
+
+      
     }
 }

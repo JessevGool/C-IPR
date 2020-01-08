@@ -31,7 +31,6 @@ namespace DoctorApplication
                 string req = _prefixmessage+Console.ReadLine();
                 byte[] buffer = Encoding.ASCII.GetBytes(req);
                 _clientSocket.Send(buffer);
-
                 byte[] receivedBuffer = new byte[1024];
                 int rec = _clientSocket.Receive(receivedBuffer);
                 byte[] data = new byte[rec];

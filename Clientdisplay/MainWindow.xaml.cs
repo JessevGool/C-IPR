@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Clientdisplay.Incoming_messages;
 using System;
 using System.Collections.Generic;
@@ -20,13 +20,6 @@ using System.Windows.Threading;
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
-using System.IO;
-
-using ServerApp;
-
-using Newtonsoft.Json.Linq;
-using System.Net.Sockets;
-using System.Net;
 
 namespace Clientdisplay
 {
@@ -36,34 +29,25 @@ namespace Clientdisplay
     public partial class MainWindow : Window, IMessageObserver
     {
 
-        private  Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        private  string _prefix = "client##";
-
         private BikeSession bikeSession;
         private bool simulationRunning;
         private StationaryBike stationaryBike;
         private int age;
         private double weight;
         private string sex;
-        private string name;
+        private String name;
 
-        public List<double> BPM { get; set; } = new List<double>();
-        public List<double> Speed { get; set; } = new List<double>();
-        public List<double> RPM { get; set; } = new List<double>();
-        public List<double> Watt { get; set; } = new List<double>();
-       private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
+        private ChartValues<ObservableValue> ChartSpeedValues { get; set; }
         private ChartValues<ObservableValue> ChartMetersTravelled { get; set; }
 
         private Stopwatch AstrandWatch = new Stopwatch();
         private DispatcherTimer AstrandTimer = new DispatcherTimer();
         string currentTime = string.Empty;
 
-        public MainWindow(int age, double weight, string sex, string name) 
+        public MainWindow(string name, int age, double weight, string sex)
         {
             InitializeComponent();
-            LoopConnect();
-           
-            SendFilebtn.IsEnabled = false;
+
             this.age = age;
             this.weight = weight;
             this.sex = sex;
@@ -77,7 +61,6 @@ namespace Clientdisplay
             bycicleBox.Items.Add("00457");
             bycicleBox.Items.Add("24517");
             bycicleBox.Items.Add("00438");
-            bycicleBox.Items.Add("00472");
 
             //StationaryBike stationaryBike = new StationaryBike();
             bikeSession = new BikeSession();
@@ -101,78 +84,11 @@ namespace Clientdisplay
                     Title = "Meters travelled",
                     Values = ChartMetersTravelled
                 }
-
-
-
-
             };
             chartGrid.Children.Add(ch);
-           
-          
 
         }
-        private  void ReceiveMessage()
-        {
-
-            Thread receivemessages = new Thread(() =>
-            {
-                while (true)
-                {
-                    try
-                    {
-                        byte[] receivedBuffer = new byte[1024];
-                        int rec = _clientSocket.Receive(receivedBuffer);
-                        byte[] data = new byte[rec];
-                        
-                        Array.Copy(receivedBuffer, data, rec);
-                        string serverresponse = Encoding.ASCII.GetString(data);
-                        string[] prefixwithmessage = serverresponse.Split(new[] { "//" }, StringSplitOptions.None);
-                        if (prefixwithmessage[0] == "message")
-                        {
-                            incomingmessages.Content = $"Received: {prefixwithmessage[1]}";
-                        }
-                        else if (prefixwithmessage[1] == "file")
-                        {
-
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        incomingmessages.Content = e.Message;
-                        Console.WriteLine(e.Message);
-                    }
-                }
-            });
-            receivemessages.Start();
-           
-        }
-        private void LoopConnect()
-        {
-            int attempts = 0;
-            while (!_clientSocket.Connected)
-            {
-
-
-                try
-                {
-                    attempts++;
-                    _clientSocket.Connect(IPAddress.Loopback, 100);
-                }
-                catch (SocketException e)
-                {
-                    ConnectionServerlbl.Content = $"Connection attempts: {attempts}";
-                   
-                }
-            }
-           
-            ConnectionServerlbl.Content = "Connected";
-            
-            string connected = "client##connected";
-            byte[] buffer = Encoding.ASCII.GetBytes(connected);
-            _clientSocket.Send(buffer);
-
-        }
-            void dt_Tick(object sender, EventArgs e)
+        void dt_Tick(object sender, EventArgs e)
         {
             if (AstrandWatch.IsRunning)
             {
@@ -195,11 +111,9 @@ namespace Clientdisplay
                 {
                     Statuslbl.Content = $"Cool down: {420 - elapsedTime}";
                 }
-                else if (elapsedTime == 420)
+                else if (elapsedTime > 420)
                 {
-                    SendFilebtn.IsEnabled = true;
                     Statuslbl.Content = "You can stop now";
-                    writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
                 }
             }
         }
@@ -219,27 +133,28 @@ namespace Clientdisplay
             //Allow other threads to work on the UI thread.
             Application.Current.Dispatcher.Invoke(new Action(() =>
             {
-                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.Speed.ToString());
-                        Speed.Add(bikeSession.Speed);
-                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.MetersTravelled.ToString());
-                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.CycleRPM);
-                        ChartSpeedValues.Add(new ObservableValue(bikeSession.Speed));
-                        ChartMetersTravelled.Add(new ObservableValue(bikeSession.MetersTravelled));
+                switch (message)
+                {
+                    case GeneralDataMessage generalMessage:
+                        lblSpeed.Content = string.Format("Snelheid: {0} km/u", bikeSession.GetSpeed().ToString());
+                        lblDistance.Content = string.Format("Afstand afgelegd: {0} meter", bikeSession.GetMetersTravelled().ToString());
+                        lblRPM.Content = string.Format("RPM: {0}", bikeSession.GetTimeSinceStart().ToString());
+                        ChartSpeedValues.Add(new ObservableValue(bikeSession.GetSpeed()));
+                        ChartMetersTravelled.Add(new ObservableValue(bikeSession.GetMetersTravelled()));
                         break;
                     case StationaryDataMessage stationaryMessage:
-                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.Voltage.ToString());
+                        lblVoltage.Content = string.Format("Voltage: {0} Watt", bikeSession.GetVoltage().ToString());
                         break;
                     case HearthDataMessage hearthDataMessage:
-                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.HearthBeats.ToString());
-                        RPM.Add(bikeSession.HearthBeats);
+                        lblHearthRate.Content = string.Format("Hartslag {0} bpm", bikeSession.GetHearthBeats().ToString());
                         break;
                 }
+            }));
+        }
+
         public void Log(string message)
         {
             Application.Current.Dispatcher.Invoke(new Action(() =>
-            {
-                log.Content += message + "\n";
-            }));
             {
                 log.Content += message + "\n";
             }));
@@ -343,7 +258,6 @@ namespace Clientdisplay
 
             AstrandWatch.Start();
             AstrandTimer.Start();
-            SendFilebtn.IsEnabled = false;
         }
 
 
@@ -354,17 +268,14 @@ namespace Clientdisplay
                 AstrandWatch.Stop();
                 AstrandWatch.Reset();
             }
-            SendFilebtn.IsEnabled = true;
+
             TimeSpan ts = AstrandWatch.Elapsed;
             currentTime = String.Format("{0:00}:{1:00}:{2:00}",
             ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM, this.steadystate));
+            timelbl.Content = $"Session Time: {currentTime}";
         }
 
         private double femaleVo2(int age, double workload, double heartRate)
-        {
-            return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100) * correction(age);
-        }
         {
             return ((0.00193 * workload + 0.326) / (0.769 * heartRate - 56.1) * 100) * correction(age);
         }
@@ -417,80 +328,5 @@ namespace Clientdisplay
                 return 0.65 - (age - 65) * 0.006;
             }
         }
-
-        private void writeLog(MeasurementData md)
-
-        {
-
-            Writer writer = new Writer();
-
-            writer.clearFile();
-
-            JObject o = (JObject)JToken.FromObject(md);
-
-            writer.writeData(o);
-
-            
-
-        }
-
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-
-        {
-
-            writeLog(new MeasurementData(this.name, this.sex, this.age, this.weight, this.RPM, this.Speed, this.BPM));
-
-        }
-
-        private void SendFilebtn_Click(object sender, RoutedEventArgs e)
-        {
-            incomingmessages.Content = "JOe";
-            string realfilename = $"{getPath()}Data/Data.txt";
-            string filetext = "client##" + System.IO.File.ReadAllText(realfilename);
-            byte[] buffer = Encoding.ASCII.GetBytes(filetext);
-            _clientSocket.Send(buffer);
-        }
-    }
-
-    public class MeasurementData
-
-    {
-
-        public string name;
-
-        public string gender;
-
-        public int age;
-
-        public double weight;
-
-        public List<double> rpm = new List<double>();
-
-        public List<double> speed = new List<double>();
-
-        public List<double> bpm = new List<double>();
-
-        public MeasurementData(string name, string gender, int age, double weight, List<double> rpm, List<double> speed, List<double> bpm)
-
-        {
-
-            this.name = name;
-
-            this.gender = gender;
-
-            this.age = age;
-
-            this.weight = weight;
-
-            this.rpm = rpm;
-
-            this.speed = speed;
-
-            this.bpm = bpm;
-
-        }
-
     }
 }

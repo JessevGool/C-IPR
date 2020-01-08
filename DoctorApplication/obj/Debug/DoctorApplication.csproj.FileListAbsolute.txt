@@ -32,21 +32,3 @@ D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.DoctorGui.
 D:\Leerjaar 2\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.GenerateResource.cache
 E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.DoctorGui.resources
 E:\School\P2\C-IPR\C-IPR@\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.GenerateResource.cache
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe.config
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.exe
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\DoctorApplication.pdb
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\BLELibrary.dll
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\LiveCharts.dll
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\LiveCharts.Wpf.dll
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\Newtonsoft.Json.dll
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\LiveCharts.pdb
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\LiveCharts.xml
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\LiveCharts.Wpf.pdb
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\LiveCharts.Wpf.xml
-E:\School\IPR\C-IPR\DoctorApplication\bin\Debug\Newtonsoft.Json.xml
-E:\School\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csprojAssemblyReference.cache
-E:\School\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.DoctorGui.resources
-E:\School\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.GenerateResource.cache
-E:\School\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.csproj.CopyComplete
-E:\School\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.exe
-E:\School\IPR\C-IPR\DoctorApplication\obj\Debug\DoctorApplication.pdb
